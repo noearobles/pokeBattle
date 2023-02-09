@@ -31,10 +31,10 @@ function getPokemon(e) {
           data.name
         )}</h1>
         <p id="weight">Weight: ${convertHeightAndWeight(data.weight)}kg</p>
-        <p id="height">Height: ${
-         convertHeightAndWeight(data.height)
-        }m</p><p id="type">Type: ${capitalizeFirstLetter(
-        data.types[0]["type"].name
+        <p id="height">Height: ${convertHeightAndWeight(
+          data.height
+        )}m</p><p id="type">Type: ${capitalizeFirstLetter(
+        data.types.map((type) => type.type.name).join(", ")
       )}</p>
         </div>`;
     })

@@ -19,9 +19,7 @@ button {
     color: #fff;
     cursor: pointer;
 }
-.no-border {
-    border: none !important;
-}
+
 main {
     display: flex;
     flex-direction: column;
