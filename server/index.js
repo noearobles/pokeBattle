@@ -15,9 +15,11 @@ function lowerCaseName(string) {
 function convertHeightAndWeight(num) {
   return num / 10;
 }
+
 function getPokemon(e) {
   const name = document.querySelector("#pokemonName").value;
   const pokemonName = lowerCaseName(name);
+
   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
     .then((response) => response.json())
     .then((data) => {
@@ -43,3 +45,26 @@ function getPokemon(e) {
     });
   e.preventDefault();
 }
+const pokedex = () => {
+  const promises = [];
+  for (i = 1; i < 155; i++) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+    promises.push(fetch(url).then((res) => res.json()));
+  }
+  Promise.all(promises).then((results) => {
+    const pokemon = results.map((data) => ({
+      name: data.name,
+      id: data.id,
+      image: data.sprites.other["official-artwork"].front_default,
+      height: data.height,
+      weight: data.weight,
+    }));
+    displayPokemon(pokemon);
+  });
+};
+
+const displayPokemon = (pokemon) => {
+  console.log(pokemon);
+};
+
+pokedex();
