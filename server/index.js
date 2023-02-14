@@ -1,10 +1,20 @@
 // const api_key = process.env.PASS_WORD;
+const loader = document.querySelector('.loader-wrapper')
+const content = document.querySelector('.content')
+const main = document.querySelector('.pages')
+function init() {
+  setTimeout(() => {
+    loader.style.display = 'none';
+  }, 4000);
+  content.style.display = 'none';
+}
+init();
 let pokemons = [];
 const poke_card = document.getElementById("pokemonBox");
 const url = "https://pokeapi.co/api/v2/pokemon";
 const pMon_num = 151;
 const search = document.querySelector("#pokemonName");
-const input = document.getElementById("pokemonName");
+const input = document.getElementById("form");
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -50,8 +60,10 @@ pokedex();
 function createPMonCard(pokemon) {
   const pMonEl = document.createElement("div");
   pMonEl.classList.add("pokemon");
-  const pMonType = pokemon.types.map((el) => el.type.name).slice(0, 1);
+  const pMonType = pokemon.types.map((el) => el.type.name.toUpperCase()).slice(0, 1);
   const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+  const height = convertHeightAndWeight(pokemon.height);
+  const weight = convertHeightAndWeight(pokemon.weight);
   const pMonStat = pokemon.stats.map((el) => el.stat.name);
   const stats = pMonStat.slice(0, 3);
   const baseValue = pokemon.stats.map((el) => el.base_stat);
@@ -75,11 +87,18 @@ function createPMonCard(pokemon) {
   <h3 class="name">${name}</h3>
   <small class="type"><span>${pMonType}</span></small>
   </div>
+  <div>
+  <small class="type"><span>Height: ${height}m</span></small>
+  </div>
+  <div>
+  <small class="type"><span>Weight: ${weight}kg</span></small>
+  </div>
   <div class ="stats">
   <h2>Stats</h2>
   <div class="flex">
   <ul>${stat}</ul>
   <ul>${base}</ul>
+  </div>
   </div>
   </div>`;
   pMonEl.innerHTML = pokeInnerHTML;
@@ -90,6 +109,7 @@ input.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchTerm = search.value;
   if (searchTerm) {
+    console.log(searchTerm)
     getPMon(searchTerm);
     search.value = "";
   } else if (searchTerm === "") {

@@ -8,17 +8,26 @@
     <title>PokeBattle</title>
   </head>
   <body>
-      <form>
-        <input
-          class="search"
-          id="pokemonName"
-          type="text"
-          placeholder="Pokemon Name"
-        />
-        <button id="butt">🔎</button>
-      </form>
+    <div class="content">
+      <img src="https://picsum.photos/200">
+  </div>
+  <div class="loader-wrapper">
+      <span class="loader">
+          <img src="https://64.media.tumblr.com/93345311779201f1a31868b3fd999065/tumblr_ny96gguwnC1rzsfkvo1_250.gifv"
+              style="width: 120px;height:120px;">
+      </span>
+  </div>
+    <form id="form">
+      <input
+        class="search"
+        id="pokemonName"
+        type="text"
+        placeholder="Pokemon Name"
+      />
+      <button id="butt">🔎</button>
+    </form>
 
-      <div id="pokemonBox"></div>
+    <div id="pokemonBox"></div>
   </body>
   <script src="server\index.js"></script>
 </html>
