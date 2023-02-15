@@ -49,6 +49,10 @@ const getPMon = async (id) => {
   searchPMons.forEach((pmon) => createPMonCard(pmon));
 };
 
+const battlePM = async (id1, id2) =>{
+
+}
+
 const getAllPMon = async (id) => {
   const res = await fetch(`${url}/${id}`);
   const pMon = await res.json();
@@ -98,6 +102,9 @@ function createPMonCard(pokemon) {
   <div class="flex">
   <ul>${stat}</ul>
   <ul>${base}</ul>
+  <div>
+  <button id="battle" placeholder="Battle">
+  </div>
   </div>
   </div>
   </div>`;
@@ -105,14 +112,16 @@ function createPMonCard(pokemon) {
   poke_card.appendChild(pMonEl);
 }
 
+
 input.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchTerm = search.value;
-  if (searchTerm) {
-    console.log(searchTerm)
-    getPMon(searchTerm);
-    search.value = "";
-  } else if (searchTerm === "") {
+  const seachedPM = searchTerm.toLowerCase().trim();
+  if (seachedPM) {
+    console.log(seachedPM)
+    getPMon(seachedPM);
+    prompt()
+  } else if (seachedPM === "") {
     pokemons = [];
     extractPmon();
     pokedex();

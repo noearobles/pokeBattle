@@ -106,6 +106,14 @@ span::first-letter {
   justify-content: space-around;
   font-size: 1.3rem;
 }
+.flex button {
+ 
+}
+
+
+.flex button:hover {
+  background-color: #d6c887;
+}
 .flex > ul {
   list-style: none;
   padding: 0;
