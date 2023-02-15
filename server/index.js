@@ -15,7 +15,6 @@ const url = "https://pokeapi.co/api/v2/pokemon";
 const pMon_num = 151;
 const search = document.querySelector("#pokemonName");
 const input = document.getElementById("form");
-
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -25,14 +24,12 @@ function lowerCaseName(string) {
 function convertHeightAndWeight(num) {
   return num / 10;
 }
-
 const pokedex = async () => {
   for (let i = 1; i <= pMon_num; i++) {
     await getAllPMon(i);
   }
   pokemons.forEach((pokemon) => createPMonCard(pokemon));
 };
-
 const extractPmon = () => {
   const pMonEls = document.getElementsByClassName("pokemon");
   let possiblePMon = [];
@@ -42,23 +39,17 @@ const extractPmon = () => {
   }
   possiblePMon.forEach((possPMon) => possPMon.remove());
 };
-
 const getPMon = async (id) => {
   const searchPMons = pokemons.filter((touch) => touch.name === id);
   extractPmon();
   searchPMons.forEach((pmon) => createPMonCard(pmon));
 };
-
-const battlePM = async (id1, id2) => {};
-
 const getAllPMon = async (id) => {
   const res = await fetch(`${url}/${id}`);
   const pMon = await res.json();
   pokemons = [...pokemons, pMon];
 };
-
 pokedex();
-
 function createPMonCard(pokemon) {
   const pMonEl = document.createElement("div");
   pMonEl.classList.add("pokemon");
@@ -108,7 +99,6 @@ function createPMonCard(pokemon) {
   pMonEl.innerHTML = pokeInnerHTML;
   poke_card.appendChild(pMonEl);
 }
-
 input.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchTerm = search.value;
@@ -123,7 +113,6 @@ input.addEventListener("submit", (e) => {
     pokedex();
   }
 });
-
 
 // document.querySelector("#search").addEventListener("click", getPokemon);
 

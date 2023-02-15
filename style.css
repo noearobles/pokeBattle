@@ -15,13 +15,22 @@ input:focus {
   font-size: larger;
   cursor: pointer;
 }
-
+#arena {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  /* background-image: url("https://preview.redd.it/d9spuwer2c491.png?width=1050&format=png&auto=webp&s=9ca8c75c63da9f8bb134e955d73e2770d073375e"); */
+}
 
 th,
 td {
   padding: 15 px;
 }
-td > img{
+td > img {
   width: 300px;
   height: 300px;
 }
@@ -30,10 +39,10 @@ td > img{
   width: 100%;
   color: #22cba8;
 }
-#btn{
+#btn {
   color: #22cba8;
 }
-.btn:hover{
+.btn:hover {
   color: #d6c887;
 }
 
@@ -45,12 +54,7 @@ table {
   margin-right: auto;
 }
 
-
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: #406163;
   color: #22cba8;
   margin: 0;

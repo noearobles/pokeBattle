@@ -14,20 +14,20 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Pokebattle</title>
   </head>
   <body>
-    <nav class="d-flex justify-content-center navbar navbar-light bg-dark w-50">
+    <nav class="d-flex justify-content-center navbar navbar-light bg-dark">
       <form id="form">
         <a class="btn btn-outline-success" href="index.html">Pokedex</a>
         <a class="btn btn-sm btn-outline-secondary" href="battle.html">
           PokeBattle
         </a>
-        <audio autoplay><source src="lib_music_battle.mp3" type="audio/mpeg" /></audio>
+        <audio autoplay controls><source id="my_audio" src="lib_music_battle.mp3" type="audio/mpeg" /></audio>
       </form>
     </nav>
     <div id="btn">HP levels are based off of level 100 Pokemon. Good-luck.</div>
-    <table>
+    <table  id="arena">
       <tr>
         <td id="hp1"></td>
         <td id="hp2"></td>
