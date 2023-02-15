@@ -102,9 +102,6 @@ function createPMonCard(pokemon) {
   <div class="flex">
   <ul>${stat}</ul>
   <ul>${base}</ul>
-  <div>
-  <button id="battle" placeholder="Battle">
-  </div>
   </div>
   </div>
   </div>`;
