@@ -14,38 +14,40 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>PokeBattle</title>
+    <title>Document</title>
   </head>
   <body>
     <nav class="d-flex justify-content-center navbar navbar-light bg-dark w-50">
       <form id="form">
-        <input
-          class="search"
-          id="pokemonName"
-          type="text"
-          placeholder="Pokemon Name"
-        />
-        <button id="butt">🔎</button>
         <a class="btn btn-outline-success" href="index.html">Pokedex</a>
         <a class="btn btn-sm btn-outline-secondary" href="battle.html">
           PokeBattle
         </a>
-        <audio autoplay><source src="lib_music_pokeball.mp3" type="audio/mpeg" /></audio>
+        <audio autoplay><source src="lib_music_battle.mp3" type="audio/mpeg" /></audio>
       </form>
     </nav>
-    <div class="content">
-      <img src="https://picsum.photos/200" />
-    </div>
-    <div class="loader-wrapper">
-      <span class="loader">
-        <img
-          src="https://64.media.tumblr.com/93345311779201f1a31868b3fd999065/tumblr_ny96gguwnC1rzsfkvo1_250.gifv"
-          style="width: 120px; height: 120px"
-        />
-      </span>
-    </div>
-
-    <div id="pokemonBox"></div>
+    <div id="btn">HP levels are based off of level 100 Pokemon. Good-luck.</div>
+    <table>
+      <tr>
+        <td id="hp1"></td>
+        <td id="hp2"></td>
+      </tr>
+      <tr>
+        <td id="pk1"></td>
+        <td id="pk2"></td>
+      </tr>
+      <tr>
+        <td colspan="2" id="comment"></td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" class="btn" id="m0" />
+          <input type="button" class="btn" id="m1" />
+          <input type="button" class="btn" id="m2" />
+          <input type="button" class="btn" id="m3" />
+        </td>
+      </tr>
+    </table>
   </body>
-  <script src="server\index.js"></script>
+  <script src="server\battle.js"></script>
 </html>

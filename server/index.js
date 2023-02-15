@@ -1,12 +1,12 @@
 // const api_key = process.env.PASS_WORD;
-const loader = document.querySelector('.loader-wrapper')
-const content = document.querySelector('.content')
-const main = document.querySelector('.pages')
+const loader = document.querySelector(".loader-wrapper");
+const content = document.querySelector(".content");
+const main = document.querySelector(".pages");
 function init() {
   setTimeout(() => {
-    loader.style.display = 'none';
+    loader.style.display = "none";
   }, 4000);
-  content.style.display = 'none';
+  content.style.display = "none";
 }
 init();
 let pokemons = [];
@@ -49,9 +49,7 @@ const getPMon = async (id) => {
   searchPMons.forEach((pmon) => createPMonCard(pmon));
 };
 
-const battlePM = async (id1, id2) =>{
-
-}
+const battlePM = async (id1, id2) => {};
 
 const getAllPMon = async (id) => {
   const res = await fetch(`${url}/${id}`);
@@ -64,7 +62,9 @@ pokedex();
 function createPMonCard(pokemon) {
   const pMonEl = document.createElement("div");
   pMonEl.classList.add("pokemon");
-  const pMonType = pokemon.types.map((el) => el.type.name.toUpperCase()).slice(0, 1);
+  const pMonType = pokemon.types
+    .map((el) => el.type.name.toUpperCase())
+    .slice(0, 1);
   const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
   const height = convertHeightAndWeight(pokemon.height);
   const weight = convertHeightAndWeight(pokemon.weight);
@@ -112,21 +112,21 @@ function createPMonCard(pokemon) {
   poke_card.appendChild(pMonEl);
 }
 
-
 input.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchTerm = search.value;
   const seachedPM = searchTerm.toLowerCase().trim();
   if (seachedPM) {
-    console.log(seachedPM)
+    console.log(seachedPM);
     getPMon(seachedPM);
-    prompt()
+    search.value = "";
   } else if (seachedPM === "") {
     pokemons = [];
     extractPmon();
     pokedex();
   }
 });
+
 
 // document.querySelector("#search").addEventListener("click", getPokemon);
 

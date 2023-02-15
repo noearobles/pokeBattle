@@ -16,6 +16,36 @@ input:focus {
   cursor: pointer;
 }
 
+
+th,
+td {
+  padding: 15 px;
+}
+td > img{
+  width: 300px;
+  height: 300px;
+}
+.btn {
+  display: block;
+  width: 100%;
+  color: #22cba8;
+}
+#btn{
+  color: #22cba8;
+}
+.btn:hover{
+  color: #d6c887;
+}
+
+p {
+  font-family: consolas;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 body {
   display: flex;
   flex-direction: column;
@@ -107,9 +137,7 @@ span::first-letter {
   font-size: 1.3rem;
 }
 .flex button {
- 
 }
-
 
 .flex button:hover {
   background-color: #d6c887;
@@ -143,45 +171,45 @@ span::first-letter {
 
 @keyframes loader {
   0% {
-      transform: rotate(0deg)
+    transform: rotate(0deg);
   }
 
   25% {
-      transform: rotate(180deg)
+    transform: rotate(180deg);
   }
 
   50% {
-      transform: rotate(180deg)
+    transform: rotate(180deg);
   }
 
   75% {
-      transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 
   100% {
-      transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
 @keyframes loader-inner {
   0% {
-      height: 0%
+    height: 0%;
   }
 
   25% {
-      height: 0%
+    height: 0%;
   }
 
   50% {
-      height: 100%
+    height: 100%;
   }
 
   75% {
-      height: 100%
+    height: 100%;
   }
 
   100% {
-      height: 0%
+    height: 0%;
   }
 }
 
@@ -208,5 +236,4 @@ span::first-letter {
   justify-content: center;
   align-items: center;
   animation: opacity 6s ease-in;
-
 }
