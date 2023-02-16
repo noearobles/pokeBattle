@@ -281,8 +281,8 @@ span::first-letter {
   animation: opacity 6s ease-in;
 }
 
- /* Media Query for Mobile Devices */
- @media (max-width: 480px) {
+
+@media (min-device-width:320px) and (max-device-width:768px) {
   td > img {
     width: 150px;
     height: 150px;
