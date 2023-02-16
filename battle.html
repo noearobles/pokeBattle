@@ -20,25 +20,35 @@
     <nav class="d-flex justify-content-center navbar navbar-light bg-dark">
       <form id="form">
         <a class="btn btn-outline-success" href="index.html">Pokedex</a>
-        <a id="pokeBtn" class="btn btn-sm btn-outline-secondary" href="battle.html">
+        <a
+          id="pokeBtn"
+          class="btn btn-sm btn-outline-secondary"
+          href="battle.html"
+        >
           PokeBattle
         </a>
-        <audio autoplay controls><source id="my_audio" src="lib_music_battle.mp3" type="audio/mpeg" /></audio>
+        <audio autoplay controls>
+          <source id="my_audio" src="lib_music_battle.mp3" type="audio/mpeg" />
+        </audio>
       </form>
     </nav>
     <div id="btn">HP levels are based off of level-100 Pokemon.</div>
-    <table  id="arena">
-      <tr>
-        <td id="hp1"></td>
-        <td id="hp2"></td>
-      </tr>
-      <tr id="main">
-        <td id="pk1"></td>
-        <td id="pk2"></td>
-      </tr>
-      <tr>
-        <td colspan="2" id="comment"></td>
-      </tr>
+    <div id="main">
+      <table id="arena">
+        <tr>
+          <td id="hp1"></td>
+          <td id="hp2"></td>
+        </tr>
+        <tr>
+          <td id="pk1"></td>
+          <td id="pk2"></td>
+        </tr>
+        <tr>
+          <td colspan="2" id="comment"></td>
+        </tr>
+      </table>
+    </div>
+    <table>
       <tr>
         <td>
           <input type="button" class="btn" id="m0" />
