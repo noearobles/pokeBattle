@@ -50,10 +50,19 @@ audio::-webkit-media-controls-panel{
 #m0,#m1,#m2,#m3{
   border: 1px solid #22cba8;
 }
+#hp1,#hp2,#comment{
+  background-color: #406163;
+  color: #d6c887;
+}
 th,
 td {
   padding: 15 px;
 
+}
+#moves{
+  width: 30%;
+  display: flex;
+  justify-content: start;
 }
 td > img {
   width: 300px;
@@ -288,5 +297,10 @@ span::first-letter {
 
     border: unset;
     border-radius:unset;
+    }
+    #moves{
+      width: 30%;
+      display: flex;
+      justify-content: start;
     }
 }
