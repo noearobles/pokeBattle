@@ -1,8 +1,8 @@
-let randomBG = document.getElementById("arena");
+let randomBG = document.getElementById("main");
 images = [
   "https://preview.redd.it/d9spuwer2c491.png?width=1050&format=png&auto=webp&s=9ca8c75c63da9f8bb134e955d73e2770d073375e",
-  "",
-  "",
+  "https://i.pinimg.com/736x/89/04/3f/89043fb2d56b3583cce79efe1c3fb53d.jpg",
+  "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/204364595/original/86db6005cd51b4f60e71cca277f603a82cf5646a/draw-a-pixel-pokemon-battle-background.png",
 ];
 let imgCount = images.length;
 let number = Math.floor(Math.random() * imgCount);
@@ -10,9 +10,10 @@ window.onload = function () {
   randomBG.style.backgroundImage = "url(" + images[number] + ")";
 };
 class Pokemon {
-  constructor(name, sprite, hp, moves) {
+  constructor(name, spriteBack, spriteFront, hp, moves) {
     this.name = name;
-    this.sprite = sprite;
+    this.spriteBack = spriteBack;
+    this.spriteFront = spriteFront;
     this.hp = hp;
     this.fullhp = hp;
     this.moves = moves;
@@ -22,6 +23,7 @@ class Pokemon {
 let pkmList = [
   [
     "Charizard",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
     "https://img.pokemondb.net/sprites/black-white/normal/charizard.png",
     360,
     [
@@ -33,6 +35,7 @@ let pkmList = [
   ],
   [
     "Blastoise",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/9.png",
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
     362,
     [
@@ -44,6 +47,7 @@ let pkmList = [
   ],
   [
     "Venusaur",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
     "https://img.pokemondb.net/sprites/black-white/normal/venusaur-f.png",
     364,
     [
@@ -63,7 +67,7 @@ let typeMatch = {
 
 function spawn(bool) {
   let p = pkmList[Math.floor(Math.random() * pkmList.length)];
-  let pkm = new Pokemon(p[0], p[1], p[2], p[3]);
+  let pkm = new Pokemon(p[0], p[1], p[2], p[3], p[4]);
 
   if (bool) {
     for (i = 0; i < 4; i++) {
@@ -75,14 +79,14 @@ function spawn(bool) {
 
 let pk1 = spawn(true);
 s1 = document.createElement("img");
-s1.src = pk1.sprite;
+s1.src = pk1.spriteBack;
 document.getElementById("pk1").appendChild(s1);
 document.getElementById("hp1").innerHTML =
   "<p>HP: " + pk1.hp + "/" + pk1.fullhp + "</p>";
 
 let pk2 = spawn(false);
 s2 = document.createElement("img");
-s2.src = pk2.sprite;
+s2.src = pk2.spriteFront;
 document.getElementById("pk2").appendChild(s2);
 document.getElementById("hp2").innerHTML =
   "<p>HP: " + pk2.hp + "/" + pk2.fullhp + "</p>";

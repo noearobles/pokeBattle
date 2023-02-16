@@ -5,6 +5,18 @@ input:focus {
   border: 1px solid #22cba8;
   box-shadow: none !important;
 }
+audio{
+height: 30px;
+width: 300px;
+border: 1px solid #d6c887;
+border-radius:30px;
+}
+#pokeBtn{
+  border:1px solid red;
+}
+audio::-webkit-media-controls-panel{
+  background-color: #406163;
+}
 #butt {
   height: 20px;
   width: 20px;
@@ -23,24 +35,40 @@ input:focus {
   display: flex;
   align-items: center;
   width: 50%;
-  /* background-image: url("https://preview.redd.it/d9spuwer2c491.png?width=1050&format=png&auto=webp&s=9ca8c75c63da9f8bb134e955d73e2770d073375e"); */
 }
 
+#main{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#pk1 img{
+  margin-top: 100px;
+}
+#pk2 img{
+  margin-bottom: 100px;
+}
+#m0,#m1,#m2,#m3{
+  border: 1px solid #22cba8;
+}
 th,
 td {
   padding: 15 px;
+
 }
 td > img {
   width: 300px;
   height: 300px;
 }
 .btn {
+  background-color: #406163;
   display: block;
   width: 100%;
   color: #22cba8;
 }
 #btn {
   color: #22cba8;
+  display: flex;
+  justify-content: center;
 }
 .btn:hover {
   color: #d6c887;
@@ -240,4 +268,13 @@ span::first-letter {
   justify-content: center;
   align-items: center;
   animation: opacity 6s ease-in;
+}
+
+ /* Media Query for Mobile Devices */
+ @media (max-width: 480px) {
+  td > img {
+    width: 200px;
+    height: 200px;
+  }
+
 }
