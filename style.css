@@ -303,4 +303,10 @@ span::first-letter {
       display: flex;
       justify-content: start;
     }
+    .search{
+      margin:1rem;
+    }
+    #butt{
+      font-size: 15px;
+    }
 }
