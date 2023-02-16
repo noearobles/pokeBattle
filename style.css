@@ -69,6 +69,8 @@ td > img {
   color: #22cba8;
   display: flex;
   justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .btn:hover {
   color: #d6c887;
@@ -273,8 +275,18 @@ span::first-letter {
  /* Media Query for Mobile Devices */
  @media (max-width: 480px) {
   td > img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
+  #pk1 img{
+    margin-top: 50px;
+  }
+  #pk2 img{
+    margin-bottom: 50px;
+  }
+  audio{
 
+    border: unset;
+    border-radius:unset;
+    }
 }
