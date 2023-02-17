@@ -29,10 +29,10 @@ let pkmArr = [
     "https://img.pokemondb.net/sprites/black-white/normal/charizard.png",
     360,
     [
-      ["Flamethrower", "fire", 95, 0.95],
-      ["Dragon Claw", "dragon", 100, 0.95],
-      ["Air slash", "fly", 75, 0.85],
-      ["Slash", "normal", 70],
+      ["Flamethrower", "fire", 90, 1],
+      ["Dragon Claw", "dragon", 80, 1],
+      ["Air slash", "fly", 75, 0.95],
+      ["Scratch", "normal", 40, 1],
     ],
   ],
   [
@@ -41,10 +41,10 @@ let pkmArr = [
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
     362,
     [
-      ["Surf", "water", 90, 0.95],
-      ["Crunch", "normal", 80, 0.95],
-      ["Ice punch", "ice", 75, 0.95],
-      ["Flash cannon", "steel", 80, 0.95],
+      ["Surf", "water", 90, 1],
+      ["Tackle", "normal", 40, 0.95],
+      ["Blizzard", "ice", 120, 0.9],
+      ["Flash cannon", "steel", 80, 1],
     ],
   ],
   [
@@ -53,24 +53,51 @@ let pkmArr = [
     "https://img.pokemondb.net/sprites/black-white/normal/venusaur-f.png",
     364,
     [
-      ["Petal Blizzard", "grass", 90, 0.95],
-      ["Sludge bomb", "poison", 90, 0.95],
-      ["Earthquake", "ground", 100, 0.95],
-      ["Body Slam", "normal", 85, 0.95],
+      ["Petal Blizzard", "grass", 90, 1],
+      ["Sludge bomb", "poison", 90, 1],
+      ["Earthquake", "ground", 100, 1],
+      ["Take Down", "normal", 90, 0.85],
     ],
   ],
+  [
+    "Pikachu",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    274,
+    [
+      ["Thunderbolt", "electric", 90, 1],
+      ["Submission", "fighting", 80, 0.8],
+      ["Thunder", "electric", 120, 0.7],
+      ["Mega Kick", "normal", 120, 0.75],
+    ],
+  ],
+  [
+    "Gengar",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/94.png",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
+    324,
+    [
+      ["Dark Pulse", "dark", 80, 1],
+      ["lick", "ghost", 80, 0.8],
+      ["Poison Jab", "poison", 100, 0.8],
+      ["Dream Eater", "psychic", 100, 1],
+    ],
+  ]
 ];
 //pk immunities [0], weaknesses [1], resistances[2]//
 let typeMatch = {
-  Charizard: [["ground"], ["water", "rock"], ["fire", "grass", "steel"]],
-  Blastoise: [[""], ["grass"], ["fire", "water"]],
-  Venusaur: [["poison"], ["fire", "fly", "ice", "steel"], ["grass", "water"]],
+  Charizard: [["ground"], ["water", "rock","electric"], ["fire", "grass", "steel"]],
+  Blastoise: [[""], ["grass","electric"], ["fire", "water"]],
+  Venusaur: [["poison"], ["fire", "fly", "ice", "steel"], ["grass", "water","electric","fighting"]],
+  Pikachu: [["electric"], ["ground"], ["flying", "steel"]],
+  Gengar: [["normal","fighting"], ["ground","psychic","ghost","dark"], ["grass", "posion","bug","fairy"]]
 };
 //function to spawn pk, true for player1, false for foe//
 function spawn(bool) {
   let p = pkmArr[Math.floor(Math.random() * pkmArr.length)];
   let pkm = new Pokemon(p[0], p[1], p[2], p[3], p[4]);
 
+  //creates moves for player 1 pkmon//
   if (bool) {
     for (i = 0; i < 4; i++) {
       document.getElementById("m" + i).value = pkm.moves[i][0];
@@ -81,14 +108,14 @@ function spawn(bool) {
 //pk1 spawn
 let pk1 = spawn(true);
 s1 = document.createElement("img");
-s1.src = pk1.spriteBack;
+s1.src = pk1.spriteBack; //friednly pkmon(YOU) displays back-side
 document.getElementById("pk1").appendChild(s1);
 document.getElementById("hp1").innerHTML =
   "<p>HP: " + pk1.hp + "/" + pk1.fullhp + "</p>";
 //pk2 spawn
 let pk2 = spawn(false);
 s2 = document.createElement("img");
-s2.src = pk2.spriteFront;
+s2.src = pk2.spriteFront; //foe pkmon displays front-side
 document.getElementById("pk2").appendChild(s2);
 document.getElementById("hp2").innerHTML =
   "<p>HP: " + pk2.hp + "/" + pk2.fullhp + "</p>";
@@ -97,7 +124,7 @@ document.getElementById("hp2").innerHTML =
 for (i = 0; i < 4; i++) {
   let btn = document.getElementById("m" + i);
   let move = pk1.moves[i];
-
+  //event for foe to counter attack//
   function addHandler(btn, move, pk1, pk2) {
     btn.addEventListener("click", function (e) {
       attack(move, pk1, pk2, "hp2", "");
@@ -114,35 +141,37 @@ for (i = 0; i < 4; i++) {
   }
   addHandler(btn, move, pk1, pk2);
 }
-
+//conditionalize hits and misses for pokemon//
 function attack(move, attacker, receiver, hp, owner) {
   document.getElementById("comment").innerHTML =
     "<p>" + owner + attacker.name + " used " + move[0] + "!</p>";
-  if (Math.random() < move[3]) {
+  let accuracy = move[3] * 255;
+  if (Math.floor(Math.random() * 256) < accuracy) {
+    //gen-1 accuracy//
     //defining attack scales, resistances and move types//
     let power = (move[2] += Math.floor(Math.random() * 10)); //for variations in damages
-    let rtype = typeMatch[receiver.name];
-    let mtype = move[1];
+    let resistanceType = typeMatch[receiver.name];
+    let moveType = move[1];
     let scale = 1;
     //for loop to check 4 possible results from an attack//
-    for (i = 0; i < rtype.length; i++) {
-      if (rtype[i].includes(mtype)) {
+    for (i = 0; i < resistanceType.length; i++) {
+      if (resistanceType[i].includes(moveType)) {
         switch (i) {
-          case 0:
+          case 0: //immunity to certain moves("type")
             scale = 0;
             setTimeout(function () {
               document.getElementById("comment").innerHTML =
                 "<p>It had no effect!</p>";
             }, 1000);
             break;
-          case 1:
+          case 1: //weakness to certain moves("type")
             scale = 2;
             setTimeout(function () {
               document.getElementById("comment").innerHTML =
                 "<p>It was super effective!</p>";
             }, 1000);
             break;
-          case 2:
+          case 2: //resistance to certain moves("type")
             scale = 0.5;
             setTimeout(function () {
               document.getElementById("comment").innerHTML =
@@ -168,8 +197,9 @@ function attack(move, attacker, receiver, hp, owner) {
 function checkWinner(hp) {
   let safety = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;
   if (safety != false) {
-    alert("GAME OVER: " + f.name + " the foe pokemon has fainted!");
-    document.getElementById(hp).innerHTML = "<p>HP: 0/" + f.fullhp + "</p>";
+    alert("GAME OVER: " + safety.name + " has fainted!");
+    document.getElementById(hp).innerHTML =
+      "<p>HP: 0/" + safety.fullhp + "</p>";
     setTimeout(function () {
       location.reload();
     }, 1500);
