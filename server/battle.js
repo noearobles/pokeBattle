@@ -1,3 +1,4 @@
+//randomly generates arena background
 let randomBG = document.getElementById("main");
 images = [
   "https://preview.redd.it/d9spuwer2c491.png?width=1050&format=png&auto=webp&s=9ca8c75c63da9f8bb134e955d73e2770d073375e",
@@ -9,6 +10,7 @@ let number = Math.floor(Math.random() * imgCount);
 window.onload = function () {
   randomBG.style.backgroundImage = "url(" + images[number] + ")";
 };
+//building class to build pk1 and pk2 objects
 class Pokemon {
   constructor(name, spriteBack, spriteFront, hp, moves) {
     this.name = name;
@@ -19,8 +21,8 @@ class Pokemon {
     this.moves = moves;
   }
 }
-
-let pkmList = [
+//pk classes
+let pkmArr = [
   [
     "Charizard",
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
@@ -58,15 +60,15 @@ let pkmList = [
     ],
   ],
 ];
-
+//pk immunities [0], weaknesses [1], resistances[2]//
 let typeMatch = {
   Charizard: [["ground"], ["water", "rock"], ["fire", "grass", "steel"]],
   Blastoise: [[""], ["grass"], ["fire", "water"]],
   Venusaur: [["poison"], ["fire", "fly", "ice", "steel"], ["grass", "water"]],
 };
-
+//function to spawn pk, true for player1, false for foe//
 function spawn(bool) {
-  let p = pkmList[Math.floor(Math.random() * pkmList.length)];
+  let p = pkmArr[Math.floor(Math.random() * pkmArr.length)];
   let pkm = new Pokemon(p[0], p[1], p[2], p[3], p[4]);
 
   if (bool) {
@@ -76,14 +78,14 @@ function spawn(bool) {
   }
   return pkm;
 }
-
+//pk1 spawn
 let pk1 = spawn(true);
 s1 = document.createElement("img");
 s1.src = pk1.spriteBack;
 document.getElementById("pk1").appendChild(s1);
 document.getElementById("hp1").innerHTML =
   "<p>HP: " + pk1.hp + "/" + pk1.fullhp + "</p>";
-
+//pk2 spawn
 let pk2 = spawn(false);
 s2 = document.createElement("img");
 s2.src = pk2.spriteFront;
@@ -91,6 +93,7 @@ document.getElementById("pk2").appendChild(s2);
 document.getElementById("hp2").innerHTML =
   "<p>HP: " + pk2.hp + "/" + pk2.fullhp + "</p>";
 
+//initiate battle sequence once player 1 attacks//
 for (i = 0; i < 4; i++) {
   let btn = document.getElementById("m" + i);
   let move = pk1.moves[i];
@@ -116,11 +119,12 @@ function attack(move, attacker, receiver, hp, owner) {
   document.getElementById("comment").innerHTML =
     "<p>" + owner + attacker.name + " used " + move[0] + "!</p>";
   if (Math.random() < move[3]) {
-    let power = (move[2] += Math.floor(Math.random() * 10));
+    //defining attack scales, resistances and move types//
+    let power = (move[2] += Math.floor(Math.random() * 10)); //for variations in damages
     let rtype = typeMatch[receiver.name];
     let mtype = move[1];
     let scale = 1;
-
+    //for loop to check 4 possible results from an attack//
     for (i = 0; i < rtype.length; i++) {
       if (rtype[i].includes(mtype)) {
         switch (i) {
@@ -162,9 +166,9 @@ function attack(move, attacker, receiver, hp, owner) {
 }
 
 function checkWinner(hp) {
-  let f = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;
-  if (f != false) {
-    alert("GAME OVER: " + f.name + " fainted!");
+  let safety = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;
+  if (safety != false) {
+    alert("GAME OVER: " + f.name + " the foe pokemon has fainted!");
     document.getElementById(hp).innerHTML = "<p>HP: 0/" + f.fullhp + "</p>";
     setTimeout(function () {
       location.reload();
