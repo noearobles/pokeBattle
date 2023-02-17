@@ -194,7 +194,7 @@ span::first-letter {
   text-transform: uppercase;
 }
 .search {
-  width: 250px;
+  width: 200px;
   height: 40px;
   outline: none;
   margin: 1.5rem;

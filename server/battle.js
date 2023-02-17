@@ -21,7 +21,7 @@ class Pokemon {
     this.moves = moves;
   }
 }
-//pk classes
+//pk classes [pk,frontPic,backPic,hp[[moves1-4 w/their attack type,damage, and accuracy]]]
 let pkmArr = [
   [
     "Charizard",
@@ -94,20 +94,33 @@ let pkmArr = [
       ["Ancient Power", "rock", 60, 1],
       ["Dream Eater", "psychic", 100, 1],
     ],
-  ]
+  ],
 ];
 //pk immunities [0], weaknesses [1], resistances[2]//
 let typeMatch = {
-  Charizard: [["ground"], ["water", "rock","electric"], ["fire", "grass", "steel"]],
-  Blastoise: [[""], ["grass","electric"], ["fire", "water"]],
-  Venusaur: [["poison"], ["fire", "fly", "ice", "steel"], ["grass", "water","electric","fighting"]],
+  Charizard: [
+    ["ground"],
+    ["water", "rock", "electric"],
+    ["fire", "grass", "steel"],
+  ],
+  Blastoise: [[""], ["grass", "electric"], ["fire", "water"]],
+  Venusaur: [
+    ["poison"],
+    ["fire", "fly", "ice", "steel"],
+    ["grass", "water", "electric", "fighting"],
+  ],
   Pikachu: [["electric"], ["ground"], ["flying", "steel"]],
-  Gengar: [["normal","fighting"], ["ground","psychic","ghost","dark"], ["grass", "posion","bug","fairy"]],
-  Mewtwo: [[""], ["bug","ghost","dark"], ["psychic", "fighting"]]};
+  Gengar: [
+    ["normal", "fighting"],
+    ["ground", "psychic", "ghost", "dark"],
+    ["grass", "posion", "bug", "fairy"],
+  ],
+  Mewtwo: [[""], ["bug", "ghost", "dark"], ["psychic", "fighting"]],
+};
 //function to spawn pk, true for player1, false for foe//
 function spawn(bool) {
-  let p = pkmArr[Math.floor(Math.random() * pkmArr.length)];
-  let pkm = new Pokemon(p[0], p[1], p[2], p[3], p[4]);
+  let p = pkmArr[Math.floor(Math.random() * pkmArr.length)]; //random pk//
+  let pkm = new Pokemon(p[0], p[1], p[2], p[3], p[4]); //build entire class//
 
   //creates moves for player 1 pkmon//
   if (bool) {
@@ -120,7 +133,7 @@ function spawn(bool) {
 //pk1 spawn
 let pk1 = spawn(true);
 s1 = document.createElement("img");
-s1.src = pk1.spriteBack; //friednly pkmon(YOU) displays back-side
+s1.src = pk1.spriteBack; //friendly pkmon(YOU) displays back-side
 document.getElementById("pk1").appendChild(s1);
 document.getElementById("hp1").innerHTML =
   "<p>HP: " + pk1.hp + "/" + pk1.fullhp + "</p>";
@@ -170,21 +183,21 @@ function attack(move, attacker, receiver, hp, owner) {
       if (resistanceType[i].includes(moveType)) {
         switch (i) {
           case 0: //immunity to certain moves("type")
-            scale = 0;
+            scale = 0; //reduce all damage from attack//
             setTimeout(function () {
               document.getElementById("comment").innerHTML =
                 "<p>It had no effect!</p>";
             }, 1000);
             break;
           case 1: //weakness to certain moves("type")
-            scale = 2;
+            scale = 2; //buff the effectiveness of attack
             setTimeout(function () {
               document.getElementById("comment").innerHTML =
                 "<p>It was super effective!</p>";
             }, 1000);
             break;
           case 2: //resistance to certain moves("type")
-            scale = 0.5;
+            scale = 0.5; //bring down effectiveness of attack
             setTimeout(function () {
               document.getElementById("comment").innerHTML =
                 "<p>It was not very effective!</p>";
