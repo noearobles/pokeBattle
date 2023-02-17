@@ -78,8 +78,20 @@ let pkmArr = [
     324,
     [
       ["Dark Pulse", "dark", 80, 1],
-      ["lick", "ghost", 80, 0.8],
+      ["Lick", "ghost", 80, 0.8],
       ["Poison Jab", "poison", 100, 0.8],
+      ["Dream Eater", "psychic", 100, 1],
+    ],
+  ],
+  [
+    "Mewtwo",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/150.png",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
+    324,
+    [
+      ["Confusion", "psychic", 80, 1],
+      ["Psybeam", "psychic", 65, 1],
+      ["Ancient Power", "rock", 60, 1],
       ["Dream Eater", "psychic", 100, 1],
     ],
   ]
@@ -90,8 +102,8 @@ let typeMatch = {
   Blastoise: [[""], ["grass","electric"], ["fire", "water"]],
   Venusaur: [["poison"], ["fire", "fly", "ice", "steel"], ["grass", "water","electric","fighting"]],
   Pikachu: [["electric"], ["ground"], ["flying", "steel"]],
-  Gengar: [["normal","fighting"], ["ground","psychic","ghost","dark"], ["grass", "posion","bug","fairy"]]
-};
+  Gengar: [["normal","fighting"], ["ground","psychic","ghost","dark"], ["grass", "posion","bug","fairy"]],
+  Mewtwo: [[""], ["bug","ghost","dark"], ["psychic", "fighting"]]};
 //function to spawn pk, true for player1, false for foe//
 function spawn(bool) {
   let p = pkmArr[Math.floor(Math.random() * pkmArr.length)];
