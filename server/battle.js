@@ -155,6 +155,18 @@ let pkmArr = [
       ["Double Edge", 120, 1],
     ],
   ],
+  [
+    "Jigglypuff",
+    "https://projectpokemon.org/images/sprites-models/normal-back/jigglypuff.gif",
+    "https://projectpokemon.org/images/normal-sprite/jigglypuff.gif",
+    434,
+    [
+      ["Disarming Voice", "fairy", 40, 1],
+      ["Last Resort", "normal", 140, 1],
+      ["Dazzling Gleam", "fairy", 80, 1],
+      ["Echoed Voice", "normal", 40, 1],
+    ],
+  ],
 ];
 //pk immunities [0], weaknesses [1], resistances[2]//
 let typeMatch = {
@@ -183,6 +195,11 @@ let typeMatch = {
     ["fire", "poison", "bug", "normal", "fly"],
   ],
   Rattata: [["ghost"], ["fighting"], [""]],
+  Jigglypuff: [
+    ["ghost", "dragon"],
+    ["steel", "poison"],
+    ["bug", "dark"],
+  ],
 };
 //function to spawn pk, true for player1, false for foe//
 function spawn(bool) {
