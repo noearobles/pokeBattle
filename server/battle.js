@@ -143,6 +143,18 @@ let pkmArr = [
       ["Rock Slide", 75, 0.9],
     ],
   ],
+  [
+    "Rattata",
+    "https://projectpokemon.org/images/sprites-models/normal-back/rattata.gif",
+    "https://projectpokemon.org/images/normal-sprite/rattata.gif",
+    264,
+    [
+      ["Bite", "normal", 60, 1],
+      ["Take Down", "normal", 90, 0.85],
+      ["Assurance", "dark", 60, 1],
+      ["Double Edge", 120, 1],
+    ],
+  ],
 ];
 //pk immunities [0], weaknesses [1], resistances[2]//
 let typeMatch = {
@@ -170,6 +182,7 @@ let typeMatch = {
     ["water", "rock", "steel", "electric", "ice"],
     ["fire", "poison", "bug", "normal", "fly"],
   ],
+  Rattata: [["ghost"], ["fighting"], [""]],
 };
 //function to spawn pk, true for player1, false for foe//
 function spawn(bool) {
