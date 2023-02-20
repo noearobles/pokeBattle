@@ -13,22 +13,30 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <title>Pokèdex</title>
   </head>
   <header>
-    <img id="logo"
+    <img
+      id="logo"
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png"
     />
     <nav class="d-flex justify-content-center navbar navbar-light bg-dark">
       <form id="form">
         <div id="searchBar">
-        <input
-          class="search"
-          id="pokemonName"
-          type="text"
-          placeholder="Pokèmon Name"
-        />
+          <input
+            class="search"
+            id="pokemonName"
+            type="text"
+            placeholder="Pokèmon Name"
+          />
         </div>
         <a class="btn btn-outline-success" href="index.html">Pokèdex</a>
         <!-- <a class="btn btn-outline-success" href="charPage.html">Pick-a-Poke</a> -->
@@ -39,11 +47,12 @@
         >
           PokèBattle
         </a>
-        <audio controls
-        id="openingSnd"
-        src="1-01. Opening.mp3"
-        type="audio/wav"
-      ></audio>
+        <audio
+          controls
+          id="openingSnd"
+          src="1-01. Opening.mp3"
+          type="audio/wav"
+        ></audio>
       </form>
     </nav>
   </header>
@@ -61,7 +70,6 @@
     </div>
     <div id="pokemonBox"></div>
   </body>
-  <footer id="footer">
-  </footer>
+  <footer id="footer"></footer>
   <script src="server\index.js"></script>
 </html>
