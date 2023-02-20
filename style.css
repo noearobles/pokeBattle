@@ -320,11 +320,10 @@ header img {
   animation: opacity 6s ease-in;
 }
 
-@media (min-device-width: 320px) and (max-device-width: 850px) {
+@media (min-device-width: 320px) and (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 3) {
   .pokemon {
     width: 40%;
   }
-
   #pk1 img {
     margin-top: 75px;
     margin-right: 40px;
@@ -364,7 +363,7 @@ header img {
     bottom: 0;
     padding: 10px;
   }
-  p{
+  p {
     margin-left: 0px;
   }
 }
