@@ -166,6 +166,17 @@ let pkmArr = [
       ["Dazzling Gleam", "fairy", 80, 1],
       ["Echoed Voice", "normal", 40, 1],
     ],
+  ], [
+    "Hitmonchan",
+    "https://projectpokemon.org/images/sprites-models/normal-back/hitmonchan.gif",
+    "https://projectpokemon.org/images/normal-sprite/hitmonchan.gif",
+    304,
+    [
+      ["Mega Punch", "normal", 80, .85],
+      ["Bullet Punch", "steel", 40, 1],
+      ["Close Combat", "fighting", 120, 1],
+      ["Drain Punch", "fighting", 75, 1],
+    ],
   ],
 ];
 //pk immunities [0], weaknesses [1], resistances[2]//
@@ -199,6 +210,10 @@ let typeMatch = {
     ["ghost", "dragon"],
     ["steel", "poison"],
     ["bug", "dark"],
+  ],Hitmonchan: [
+    [""],
+    ["fly", "pyschic","fairy"],
+    ["bug","rock","dark"],
   ],
 };
 //function to spawn pk, true for player1, false for foe//
@@ -210,6 +225,7 @@ function spawn(bool) {
   if (bool) {
     for (i = 0; i < 4; i++) {
       document.getElementById("m" + i).value = pkm.moves[i][0];
+      //  + " " + pkm.moves[i][3];
     }
   }
   return pkm;
