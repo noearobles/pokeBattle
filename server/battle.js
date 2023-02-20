@@ -191,6 +191,18 @@ let pkmArr = [
       ["Ice Fang", "ice", 65, 95],
     ],
   ],
+  [
+    "Electrode",
+    "https://projectpokemon.org/images/sprites-models/normal-back/electrode.gif",
+    "https://projectpokemon.org/images/normal-sprite/electrode.gif",
+    324,
+    [
+      ["Spark", "electric", 65, 1],
+      ["Charge Beam", "electric", 50, 0.9],
+      ["Chloroblast", "grass", 150, 0.95],
+      ["Self-Destruct", "normal", 200, 1],
+    ],
+  ],
 ];
 //pk immunities [0], weaknesses [1], resistances[2]//
 let typeMatch = {
@@ -230,6 +242,7 @@ let typeMatch = {
     ["electric", "rock"],
     ["bug", "fire", "steel", "fighting", "water"],
   ],
+  Electrode: [[""], ["ground"], ["electric", "fly", "steel"]],
 };
 //function to spawn pk, true for player1, false for foe//
 function spawn(bool) {
