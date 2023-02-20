@@ -1,4 +1,5 @@
 * {
+  font-family: consolas;
   box-sizing: border-box;
 }
 input:focus {
@@ -49,12 +50,12 @@ nav {
   justify-content: center;
   display: flex;
   align-items: center;
-  width: 50%;
 }
 
 #main {
   background-repeat: no-repeat;
   background-size: 100% 100%;
+ 
 }
 #pk1 img {
   margin-top: 100px;
@@ -105,10 +106,6 @@ td > img {
 .btn:hover {
   color: #d6c887;
 }
-
-p {
-  font-family: consolas;
-}
 table {
   margin-left: auto;
   margin-right: auto;
@@ -128,6 +125,7 @@ body {
   max-width: 1200px;
 }
 .pokemon {
+  width: min-content;
   border-radius: 10px;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 1);
   border-top: 1px solid #000;
@@ -264,6 +262,9 @@ header img {
   100% {
     transform: rotate(360deg);
   }
+}
+@keyframes animation {
+
 }
 
 @keyframes loader-inner {

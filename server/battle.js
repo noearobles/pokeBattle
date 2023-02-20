@@ -4,6 +4,7 @@ images = [
   "https://preview.redd.it/d9spuwer2c491.png?width=1050&format=png&auto=webp&s=9ca8c75c63da9f8bb134e955d73e2770d073375e",
   "https://i.pinimg.com/736x/89/04/3f/89043fb2d56b3583cce79efe1c3fb53d.jpg",
   "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/204364595/original/86db6005cd51b4f60e71cca277f603a82cf5646a/draw-a-pixel-pokemon-battle-background.png",
+  "https://cutewallpaper.org/cdn-cgi/mirage/91b98c5373d6a01796e55b9f978389531ff4e5ebae85abd935c54ab8d42fdd46/1280/21/pokemon-battle-backgrounds/Pokemon-X-and-Y-battle-background-10-by-PhoenixOfLight92-on-.png"
 ];
 let imgCount = images.length;
 let number = Math.floor(Math.random() * imgCount);
@@ -14,7 +15,9 @@ window.onload = function () {
 let attackSndElement = document.getElementById("attackSnd");
 let battleSndElement = document.getElementById("my_audio");
 let victorySndElement = document.getElementById("my_victory");
-
+let animationElement = document.querySelector("#pk1");
+animationElement.addEventListener("animationStart", start, false);
+function start(e) {}
 //building class to build pk1 and pk2 objects
 class Pokemon {
   constructor(name, spriteBack, spriteFront, hp, moves) {
@@ -100,6 +103,18 @@ let pkmArr = [
       ["Dream Eater", "psychic", 100, 1],
     ],
   ],
+  [
+    "Machamp",
+    "https://projectpokemon.org/images/sprites-models/normal-back/machamp.gif",
+    "https://projectpokemon.org/images/normal-sprite/machamp.gif",
+    384,
+    [
+      ["Strength", "Normal", 80, 1],
+      ["Dynamic Punch", "fighting", 50, 1],
+      ["Dual Chop", "dragon", 40, 0.9],
+      ["Low Sweep", 65, 1],
+    ],
+  ],
 ];
 //pk immunities [0], weaknesses [1], resistances[2]//
 let typeMatch = {
@@ -121,6 +136,7 @@ let typeMatch = {
     ["grass", "posion", "bug", "fairy"],
   ],
   Mewtwo: [[""], ["bug", "ghost", "dark"], ["psychic", "fighting"]],
+  Machamp: [[""], ["flying", "psychic", "fairy"], ["dark", "rock", "bug"]],
 };
 //function to spawn pk, true for player1, false for foe//
 function spawn(bool) {

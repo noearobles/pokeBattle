@@ -32,9 +32,17 @@
         >
           PokeBattle
         </a>
-        <audio autoplay controls>
-          <source id="my_audio" src="lib_music_battle.mp3" type="audio/mpeg" />
-        </audio>
+        <audio
+          controls
+          id="my_audio"
+          src="lib_music_battle.mp3"
+          type="audio/mpeg"
+        ></audio>
+        <audio
+          id="my_victory"
+          src="1-08. Victory (Vs. Wild Pokémon).mp3"
+          type="audio/mpeg"
+        ></audio>
       </form>
     </nav>
   </header>
@@ -49,8 +57,8 @@
           <td id="hp2"></td>
         </tr>
         <tr>
-          <td id="pk1"></td>
-          <td id="pk2"></td>
+          <td class="animation" id="pk1"></td>
+          <td class="animation" id="pk2"></td>
         </tr>
         <tr>
           <td colspan="2" id="comment"></td>
