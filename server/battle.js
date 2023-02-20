@@ -185,7 +185,7 @@ let pkmArr = [
     "https://projectpokemon.org/images/normal-sprite/gyarados.gif",
     394,
     [
-      ["Hurrricane", "flying", 110, 0.7],
+      ["Hurricane", "flying", 110, 0.7],
       ["Twister", "dragon", 40, 1],
       ["Hydro Pump", "water", 110, 0.8],
       ["Ice Fang", "ice", 65, 95],
