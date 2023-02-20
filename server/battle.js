@@ -25,8 +25,8 @@ class Pokemon {
 let pkmArr = [
   [
     "Charizard",
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
-    "https://img.pokemondb.net/sprites/black-white/normal/charizard.png",
+    "https://projectpokemon.org/images/sprites-models/normal-back/charizard.gif",
+    "https://projectpokemon.org/images/normal-sprite/charizard.gif",
     360,
     [
       ["Flamethrower", "fire", 90, 1],
@@ -37,8 +37,8 @@ let pkmArr = [
   ],
   [
     "Blastoise",
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/9.png",
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+    "https://projectpokemon.org/images/sprites-models/normal-back/blastoise.gif",
+    "https://projectpokemon.org/images/normal-sprite/blastoise.gif",
     362,
     [
       ["Surf", "water", 90, 1],
@@ -49,8 +49,8 @@ let pkmArr = [
   ],
   [
     "Venusaur",
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png",
-    "https://img.pokemondb.net/sprites/black-white/normal/venusaur-f.png",
+    "https://projectpokemon.org/images/sprites-models/normal-back/venusaur-f.gif",
+    "https://projectpokemon.org/images/normal-sprite/venusaur-f.gif",
     364,
     [
       ["Petal Blizzard", "grass", 90, 1],
@@ -61,8 +61,8 @@ let pkmArr = [
   ],
   [
     "Pikachu",
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "https://projectpokemon.org/images/sprites-models/normal-back/pikachu.gif",
+    "https://projectpokemon.org/images/shiny-sprite/pikachu.gif",
     274,
     [
       ["Thunderbolt", "electric", 90, 1],
@@ -73,8 +73,8 @@ let pkmArr = [
   ],
   [
     "Gengar",
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/94.png",
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
+    "https://projectpokemon.org/images/sprites-models/normal-back/gengar.gif",
+    "https://projectpokemon.org/images/normal-sprite/gengar.gif",
     324,
     [
       ["Dark Pulse", "dark", 80, 1],
@@ -85,8 +85,8 @@ let pkmArr = [
   ],
   [
     "Mewtwo",
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/150.png",
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
+    "https://projectpokemon.org/images/sprites-models/normal-back/mewtwo.gif",
+    "https://projectpokemon.org/images/normal-sprite/mewtwo.gif",
     324,
     [
       ["Confusion", "psychic", 80, 1],

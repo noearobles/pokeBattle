@@ -5,16 +5,16 @@ input:focus {
   border: 1px solid #22cba8;
   box-shadow: none !important;
 }
-audio{
-height: 30px;
-width: 300px;
-border: 1px solid #d6c887;
-border-radius:30px;
+audio {
+  height: 30px;
+  width: 300px;
+  border: 1px solid #d6c887;
+  border-radius: 30px;
 }
-#pokeBtn{
-  border:1px solid red;
+#pokeBtn {
+  border: 1px solid red;
 }
-audio::-webkit-media-controls-panel{
+audio::-webkit-media-controls-panel {
   background-color: #406163;
 }
 #butt {
@@ -27,6 +27,17 @@ audio::-webkit-media-controls-panel{
   font-size: larger;
   cursor: pointer;
 }
+nav {
+  border-radius: 0.25rem;
+}
+#health {
+  border-radius: 0.25rem;
+}
+#footer{
+  display: flex;
+  justify-content: center;
+  color: #d6c887;
+}
 #arena {
   display: flex;
   flex-direction: column;
@@ -37,36 +48,42 @@ audio::-webkit-media-controls-panel{
   width: 50%;
 }
 
-#main{
+#main {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-#pk1 img{
+#pk1 img {
   margin-top: 100px;
+  margin-right: 200px;
 }
-#pk2 img{
+#pk2 img {
   margin-bottom: 100px;
+  margin-left: 200px;
 }
-#m0,#m1,#m2,#m3{
+#m0,
+#m1,
+#m2,
+#m3 {
   border: 1px solid #22cba8;
 }
-#hp1,#hp2,#comment{
+#hp1,
+#hp2,
+#comment {
   background-color: #406163;
   color: #d6c887;
 }
 th,
 td {
   padding: 15 px;
-
 }
-#moves{
+#moves {
   width: 30%;
   display: flex;
   justify-content: start;
 }
 td > img {
-  width: 300px;
-  height: 300px;
+  width: auto;
+  height: auto;
 }
 .btn {
   background-color: #406163;
@@ -193,11 +210,23 @@ span::first-letter {
 .flex > ul > li::first-letter {
   text-transform: uppercase;
 }
-.search {
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+header img {
   width: 200px;
+}
+
+.search {
   height: 40px;
   outline: none;
-  margin: 1.5rem;
+  margin-top: 1.5rem;
+  margin-right: 0;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #d6c887;
@@ -281,32 +310,31 @@ span::first-letter {
   animation: opacity 6s ease-in;
 }
 
-
-@media (min-device-width:320px) and (max-device-width:768px) {
-  td > img {
-    width: 150px;
-    height: 150px;
+@media (min-device-width: 320px) and (max-device-width: 768px) {
+  .pokemon {
+    width: 40%;
   }
-  #pk1 img{
+  #pk1 img {
     margin-top: 75px;
+    margin-right: 40px;
   }
-  #pk2 img{
+  #pk2 img {
     margin-bottom: 75px;
+    margin-left: 40px;
   }
-  audio{
-
+  audio {
     border: unset;
-    border-radius:unset;
-    }
-    #moves{
-      width: 30%;
-      display: flex;
-      justify-content: start;
-    }
-    .search{
-      margin:1rem;
-    }
-    #butt{
-      font-size: 15px;
-    }
+    border-radius: unset;
+  }
+  #moves {
+    width: 30%;
+    display: flex;
+    justify-content: start;
+  }
+  .search {
+    margin: 1rem;
+  }
+  #butt {
+    font-size: 15px;
+  }
 }

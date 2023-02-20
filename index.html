@@ -16,25 +16,34 @@
     <link rel="stylesheet" href="style.css" />
     <title>Pokedex</title>
   </head>
-  <nav class="d-flex justify-content-center navbar navbar-light bg-dark">
-    <form id="form">
-      <input
-        class="search"
-        id="pokemonName"
-        type="text"
-        placeholder="Pokemon Name"
-      />
-      <button id="butt">🔎</button>
-      <a class="btn btn-outline-success" href="index.html">Pokedex</a>
-      <!-- <a class="btn btn-outline-success" href="charPage.html">Pick-a-Poke</a> -->
-      <a id="pokeBtn" class="btn btn-sm btn-outline-secondary" href="battle.html">
-        PokeBattle
-      </a>
-      <audio autoplay>
-        <source src="lib_music_pokeball.mp3" type="audio/mpeg" />
-      </audio>
-    </form>
-  </nav>
+  <header>
+    <img id="logo"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png"
+    />
+    <nav class="d-flex justify-content-center navbar navbar-light bg-dark">
+      <form id="form">
+        <input
+          class="search"
+          id="pokemonName"
+          type="text"
+          placeholder="Pokemon Name"
+        />
+        <button id="butt">🔎</button>
+        <a class="btn btn-outline-success" href="index.html">Pokedex</a>
+        <!-- <a class="btn btn-outline-success" href="charPage.html">Pick-a-Poke</a> -->
+        <a
+          id="pokeBtn"
+          class="btn btn-sm btn-outline-secondary"
+          href="battle.html"
+        >
+          PokeBattle
+        </a>
+        <audio autoplay>
+          <source src="lib_music_pokeball.mp3" type="audio/mpeg" />
+        </audio>
+      </form>
+    </nav>
+  </header>
   <body>
     <div class="content">
       <img src="https://picsum.photos/200" />
@@ -49,5 +58,10 @@
     </div>
     <div id="pokemonBox"></div>
   </body>
+  <footer id="footer">
+    <div>
+        <p>@ 2023 Developed by Noe Robles. All rights reserved.</p>
+        </div>
+  </footer>
   <script src="server\index.js"></script>
 </html>
