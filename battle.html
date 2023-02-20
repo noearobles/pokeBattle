@@ -23,14 +23,14 @@
     />
     <nav class="d-flex justify-content-center navbar navbar-light bg-dark">
       <form id="form">
-        <a class="btn btn-outline-success" href="index.html">Pokedex</a>
+        <a class="btn btn-outline-success" href="index.html">Pokèdex</a>
         <!-- <a class="btn btn-outline-success" href="charPage.html">Pick-a-Poke</a> -->
         <a
           id="pokeBtn"
           class="btn btn-sm btn-outline-secondary"
           href="battle.html"
         >
-          PokeBattle
+          PokèBattle
         </a>
         <audio
           controls
@@ -48,14 +48,16 @@
   </header>
   <body>
     <div id="btn">
-      HP levels are based off of level-100 Pokemon. Pick a move!
+      HP levels are based off of level-100 Pokèmon. Pick a move!
     </div>
     <div id="main">
-      <table id="arena">
+      <table>
         <tr id="health">
           <td id="hp1"></td>
           <td id="hp2"></td>
         </tr>
+      </table>
+      <table id="arena">
         <tr>
           <td class="animation" id="pk1"></td>
           <td class="animation" id="pk2"></td>
@@ -65,26 +67,21 @@
         </tr>
       </table>
     </div>
-    <table id="moves">
-      <tr>
-        <td>
-          <audio
-            id="attackSnd"
-            src="lib_music_attack.wav"
-            type="audio/wav"
-          ></audio>
-          <input type="button" class="btn" id="m0" />
-          <input type="button" class="btn" id="m1" />
-          <input type="button" class="btn" id="m2" />
-          <input type="button" class="btn" id="m3" />
-        </td>
-      </tr>
-    </table>
+    <table  id="moves">
+      <tr><td>  <audio
+        id="attackSnd"
+        src="lib_music_attack.wav"
+        type="audio/wav"
+      ></audio>
+      <input type="button" class="btn" id="m0" />
+    </td><td><input type="button" class="btn" id="m1" /></td></tr>
+      <tr><td> <input type="button" class="btn" id="m2" /></td><td>  <input type="button" class="btn" id="m3" /></td></tr>
+      </table>
   </body>
   <footer id="footer">
     <div>
       <p>@ 2023 Developed by Noe Robles. All rights reserved.</p>
-    </div>
+      </div>
   </footer>
   <script src="server\battle.js"></script>
 </html>

@@ -35,12 +35,11 @@ audio::-webkit-media-controls-panel {
 nav {
   border-radius: 0.25rem;
 }
-#health {
-  border-radius: 0.25rem;
-}
+
 #footer {
   display: flex;
   justify-content: center;
+  align-items: baseline;
   color: #d6c887;
 }
 #arena {
@@ -55,7 +54,6 @@ nav {
 #main {
   background-repeat: no-repeat;
   background-size: 100% 100%;
- 
 }
 #pk1 img {
   margin-top: 100px;
@@ -75,16 +73,21 @@ nav {
 #hp2,
 #comment {
   background-color: #406163;
+  opacity: .8;
   color: #d6c887;
+  width: min-content;
+  height: min-content;
+  border-radius: 3rem;
 }
 th,
 td {
-  padding: 15 px;
+  padding: 15px;
+  border-radius: 1rem;
+  height: min-content;
 }
+
 #moves {
   width: 30%;
-  display: flex;
-  justify-content: start;
 }
 td > img {
   width: auto;
@@ -117,6 +120,9 @@ body {
   margin: 0;
 }
 
+p{
+  margin-bottom: 0;
+}
 #pokemonBox {
   display: flex;
   flex-wrap: wrap;
@@ -242,6 +248,7 @@ header img {
   letter-spacing: 2px;
 }
 
+
 @keyframes loader {
   0% {
     transform: rotate(0deg);
@@ -341,5 +348,18 @@ header img {
   }
   #butt {
     font-size: 15px;
+  }
+  #moves {
+    float: left;
+    padding: 0%;
+  }
+td{
+  padding: 1%;
+}
+  footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
   }
 }
