@@ -8,6 +8,7 @@ function init() {
     loader.style.display = "none";
   }, 4000);
   content.style.display = "none";
+
   openingSndElement.play();
 }
 

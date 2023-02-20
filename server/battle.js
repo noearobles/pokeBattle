@@ -13,6 +13,7 @@ window.onload = function () {
 };
 let attackSndElement = document.getElementById("attackSnd");
 let battleSndElement = document.getElementById("my_audio");
+let victorySndElement = document.getElementById("my_victory");
 
 //building class to build pk1 and pk2 objects
 class Pokemon {
@@ -227,7 +228,7 @@ function attack(move, attacker, receiver, hp, owner) {
 function checkWinner(hp) {
   let safety = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;
   if (safety != false) {
-    alert("GAME OVER: " + safety.name + " has fainted!");
+    alert("Game Over: " + safety.name + " has fainted!");
     document.getElementById(hp).innerHTML =
       "<p>HP: 0/" + safety.fullhp + "</p>";
     setTimeout(function () {
