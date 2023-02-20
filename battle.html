@@ -18,9 +18,9 @@
   </head>
   <header>
     <img
-    id="logo"
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png"
-  />
+      id="logo"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png"
+    />
     <nav class="d-flex justify-content-center navbar navbar-light bg-dark">
       <form id="form">
         <a class="btn btn-outline-success" href="index.html">Pokedex</a>
@@ -39,7 +39,9 @@
     </nav>
   </header>
   <body>
-    <div id="btn">HP levels are based off of level-100 Pokemon. Pick a move!</div>
+    <div id="btn">
+      HP levels are based off of level-100 Pokemon. Pick a move!
+    </div>
     <div id="main">
       <table id="arena">
         <tr id="health">
@@ -58,6 +60,11 @@
     <table id="moves">
       <tr>
         <td>
+          <audio
+            id="attackSnd"
+            src="lib_music_attack.wav"
+            type="audio/wav"
+          ></audio>
           <input type="button" class="btn" id="m0" />
           <input type="button" class="btn" id="m1" />
           <input type="button" class="btn" id="m2" />
@@ -68,8 +75,8 @@
   </body>
   <footer id="footer">
     <div>
-        <p>@ 2023 Developed by Noe Robles. All rights reserved.</p>
-        </div>
+      <p>@ 2023 Developed by Noe Robles. All rights reserved.</p>
+    </div>
   </footer>
   <script src="server\battle.js"></script>
 </html>

@@ -1,3 +1,4 @@
+let openingSndElement = document.getElementById("openingSnd");
 // const api_key = process.env.PASS_WORD;
 const loader = document.querySelector(".loader-wrapper");
 const content = document.querySelector(".content");
@@ -7,7 +8,9 @@ function init() {
     loader.style.display = "none";
   }, 4000);
   content.style.display = "none";
+  openingSndElement.play();
 }
+
 init();
 let pokemons = [];
 const poke_card = document.getElementById("pokemonBox");

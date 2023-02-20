@@ -17,6 +17,10 @@ audio {
 audio::-webkit-media-controls-panel {
   background-color: #406163;
 }
+#searchBar {
+  display: flex;
+  justify-content: center;
+}
 #butt {
   height: 20px;
   width: 20px;
@@ -33,7 +37,7 @@ nav {
 #health {
   border-radius: 0.25rem;
 }
-#footer{
+#footer {
   display: flex;
   justify-content: center;
   color: #d6c887;
@@ -333,6 +337,7 @@ header img {
   }
   .search {
     margin: 1rem;
+    width: 220px;
   }
   #butt {
     font-size: 15px;

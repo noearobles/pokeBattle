@@ -9,7 +9,11 @@ let imgCount = images.length;
 let number = Math.floor(Math.random() * imgCount);
 window.onload = function () {
   randomBG.style.backgroundImage = "url(" + images[number] + ")";
+  battleSndElement.play();
 };
+let attackSndElement = document.getElementById("attackSnd");
+let battleSndElement = document.getElementById("my_audio");
+
 //building class to build pk1 and pk2 objects
 class Pokemon {
   constructor(name, spriteBack, spriteFront, hp, moves) {
@@ -153,6 +157,7 @@ for (i = 0; i < 4; i++) {
   function addHandler(btn, move, pk1, pk2) {
     btn.addEventListener("click", function (e) {
       attack(move, pk1, pk2, "hp2", "");
+      attackSndElement.play();
       setTimeout(
         attack,
         2000,
