@@ -78,7 +78,7 @@ nav {
 #m2,
 #m3 {
   border: 1px solid #22cba8;
-  font-weight: 500;
+  font-weight: bolder;
   font-size: larger;
 }
 #hp1,
@@ -184,10 +184,11 @@ p {
 .pokemon .name {
   margin: 15px 0 7px;
   letter-spacing: 1px;
+  font-weight: bolder;
   font-size: 1.5rem;
 }
 .type span {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 span::first-letter {
   text-transform: uppercase;
