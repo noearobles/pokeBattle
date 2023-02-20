@@ -166,16 +166,29 @@ let pkmArr = [
       ["Dazzling Gleam", "fairy", 80, 1],
       ["Echoed Voice", "normal", 40, 1],
     ],
-  ], [
+  ],
+  [
     "Hitmonchan",
     "https://projectpokemon.org/images/sprites-models/normal-back/hitmonchan.gif",
     "https://projectpokemon.org/images/normal-sprite/hitmonchan.gif",
     304,
     [
-      ["Mega Punch", "normal", 80, .85],
+      ["Mega Punch", "normal", 80, 0.85],
       ["Bullet Punch", "steel", 40, 1],
       ["Close Combat", "fighting", 120, 1],
       ["Drain Punch", "fighting", 75, 1],
+    ],
+  ],
+  [
+    "Gyarados",
+    "https://projectpokemon.org/images/sprites-models/normal-back/gyarados.gif",
+    "https://projectpokemon.org/images/normal-sprite/gyarados.gif",
+    394,
+    [
+      ["Hurrricane", "flying", 110, 0.7],
+      ["Twister", "dragon", 40, 1],
+      ["Hydro Pump", "water", 110, 0.8],
+      ["Ice Fang", "ice", 65, 95],
     ],
   ],
 ];
@@ -210,10 +223,12 @@ let typeMatch = {
     ["ghost", "dragon"],
     ["steel", "poison"],
     ["bug", "dark"],
-  ],Hitmonchan: [
-    [""],
-    ["fly", "pyschic","fairy"],
-    ["bug","rock","dark"],
+  ],
+  Hitmonchan: [[""], ["fly", "pyschic", "fairy"], ["bug", "rock", "dark"]],
+  Gyarados: [
+    ["ground"],
+    ["electric", "rock"],
+    ["bug", "fire", "steel", "fighting", "water"],
   ],
 };
 //function to spawn pk, true for player1, false for foe//
