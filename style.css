@@ -73,17 +73,14 @@ nav {
 #hp2,
 #comment {
   background-color: #406163;
-  opacity: .8;
+  opacity: 0.8;
   color: #d6c887;
-  width: min-content;
-  height: min-content;
   border-radius: 3rem;
 }
 th,
 td {
   padding: 15px;
   border-radius: 1rem;
-  height: min-content;
 }
 
 #moves {
@@ -120,8 +117,12 @@ body {
   margin: 0;
 }
 
-p{
+p {
+  height: min-content;
+  width: 100%;
   margin-bottom: 0;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 #pokemonBox {
   display: flex;
@@ -248,7 +249,6 @@ header img {
   letter-spacing: 2px;
 }
 
-
 @keyframes loader {
   0% {
     transform: rotate(0deg);
@@ -271,7 +271,6 @@ header img {
   }
 }
 @keyframes animation {
-
 }
 
 @keyframes loader-inner {
@@ -321,10 +320,11 @@ header img {
   animation: opacity 6s ease-in;
 }
 
-@media (min-device-width: 320px) and (max-device-width: 768px) {
+@media (min-device-width: 320px) and (max-device-width: 850px) {
   .pokemon {
     width: 40%;
   }
+
   #pk1 img {
     margin-top: 75px;
     margin-right: 40px;
@@ -353,13 +353,18 @@ header img {
     float: left;
     padding: 0%;
   }
-td{
-  padding: 1%;
-}
-  footer{
+  td {
+    padding: 1%;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     left: 0;
     bottom: 0;
     padding: 10px;
+  }
+  p{
+    margin-left: 0px;
   }
 }
