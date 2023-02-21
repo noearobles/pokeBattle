@@ -24,6 +24,7 @@ let supEffectSndElement = document.getElementById("superEffectSnd");
 let wasntEffectSndElement = document.getElementById("wasntEffectSnd");
 let didntEffectSndElement = document.getElementById("didntEffectSnd");
 let attMissEffectSndElement = document.getElementById("attMissEffectSnd");
+let endEffectSndElement = document.getElementById("endEffectSnd");
 
 //building class to build pk1 and pk2 objects
 class Pokemon {
@@ -358,11 +359,13 @@ function attack(move, attacker, receiver, hp, owner) {
 function checkWinner(hp) {
   let safety = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;
   if (safety != false) {
-    alert("Game Over: " + safety.name + " has fainted!");
+    endEffectSndElement.play();
+    document.getElementById("comment").innerHTML =
+      "<p>Game Over: " + safety.name + " has fainted!</p>";
     document.getElementById(hp).innerHTML =
       "<p>HP: 0/" + safety.fullhp + "</p>";
     setTimeout(function () {
       location.reload();
-    }, 1500);
+    }, 3000);
   }
 }
