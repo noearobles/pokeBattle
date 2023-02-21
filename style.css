@@ -32,7 +32,7 @@ audio::-webkit-media-controls-panel {
   display: flex;
   justify-content: center;
 }
-#comment{
+#comment {
   font-size: bolder;
   font-size: larger;
   padding: 10px;
@@ -64,6 +64,10 @@ nav {
   justify-content: center;
   display: flex;
   align-items: center;
+}
+
+.shake{
+  animation: shake 0.3s ease-in;
 }
 
 #main {
@@ -107,7 +111,10 @@ td > img {
   width: auto;
   height: auto;
 }
-.btn {
+.btn1{
+  border-radius: 5px;
+}
+.btn,.btn1 {
   background-color: #406163;
   display: block;
   width: 100%;
@@ -121,7 +128,7 @@ td > img {
   margin-left: 20px;
   margin-right: 20px;
 }
-.btn:hover {
+.btn:hover,.btn1:hover {
   color: #d6c887;
 }
 table {
@@ -226,7 +233,6 @@ span::first-letter {
   font-size: 1.3rem;
 }
 
-
 .flex button:hover {
   background-color: #d6c887;
 }
@@ -289,7 +295,6 @@ header img {
   }
 }
 
-
 @keyframes loader-inner {
   0% {
     height: 0%;
@@ -311,8 +316,14 @@ header img {
     height: 0%;
   }
 }
-
-
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+50%{
+    transform: translate(80px,-20px);
+  }
+}
 .loader {
   display: flex;
   justify-content: center;
@@ -338,7 +349,7 @@ header img {
   animation: opacity 6s ease-in;
 }
 
-@media (min-device-width: 320px) and (max-device-width: 850px){
+@media (min-device-width: 320px) and (max-device-width: 850px) {
   #pk1 img {
     margin-top: 75px;
     margin-right: 40px;
@@ -347,9 +358,12 @@ header img {
     margin-bottom: 75px;
     margin-left: 40px;
   }
-  #m0, #m1, #m2, #m3 {
+  #m0,
+  #m1,
+  #m2,
+  #m3 {
     font-size: smaller;
-}
+  }
 }
 
 @media (min-device-width: 320px) and (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 3) {
@@ -385,9 +399,12 @@ header img {
     float: left;
     padding: 0%;
   }
-  #m0, #m1, #m2, #m3 {
+  #m0,
+  #m1,
+  #m2,
+  #m3 {
     font-size: smaller;
-}
+  }
   td {
     padding: 1%;
   }

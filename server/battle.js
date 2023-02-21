@@ -25,6 +25,9 @@ let wasntEffectSndElement = document.getElementById("wasntEffectSnd");
 let didntEffectSndElement = document.getElementById("didntEffectSnd");
 let attMissEffectSndElement = document.getElementById("attMissEffectSnd");
 let endEffectSndElement = document.getElementById("endEffectSnd");
+const pk1img = document.querySelector("#pk1");
+const pk2img = document.querySelector("#pk2");
+const shakepk1 = document.querySelector(".btn1");
 
 //building class to build pk1 and pk2 objects
 class Pokemon {
@@ -265,11 +268,7 @@ let typeMatch = {
     ["water", "rock", "electric"],
     ["fire", "grass", "steel"],
   ],
-  Electrode: [
-    [""],
-    ["ground"],
-    ["electric", "fly", "steel"],
-  ],
+  Electrode: [[""], ["ground"], ["electric", "fly", "steel"]],
 };
 //function to spawn pk, true for player1, false for foe//
 function spawn(bool) {
@@ -309,16 +308,22 @@ for (i = 0; i < 4; i++) {
   function addHandler(btn, move, pk1, pk2) {
     btn.addEventListener("click", function (e) {
       attack(move, pk1, pk2, "hp2", "");
+      pk1img.classList.remove("shake");
+      pk1img.offsetWidth;
+      pk1img.classList.add("shake");
       attackSndElement.play();
       setTimeout(
         attack,
-        3100,
+        2700,
         pk2.moves[Math.floor(Math.random() * 3)],
         pk2,
         pk1,
         "hp1",
         "Foe "
       );
+      // pk2img.classList.remove("shake2");
+      // pk2img.offsetWidth;
+      // pk2img.classList.add("shake2");
     });
   }
   addHandler(btn, move, pk1, pk2);
@@ -353,6 +358,7 @@ function attack(move, attacker, receiver, hp, owner) {
             setTimeout(function () {
               document.getElementById("comment").innerHTML =
                 "<p>It was super effective!</p>";
+
               supEffectSndElement.play();
             }, 1000);
             break;
@@ -379,6 +385,20 @@ function attack(move, attacker, receiver, hp, owner) {
     });
   }
   checkWinner(hp);
+}
+function checkWinner(hp) {
+  let safety = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;
+  if (safety != false) {
+    endEffectSndElement.play();
+    setTimeout(function () {
+      alert("Game Over: " + safety.name + " has fainted!");
+    }, 500);
+    document.getElementById(hp).innerHTML =
+      "<p>HP: 0/" + safety.fullhp + "</p>";
+    setTimeout(function () {
+      location.reload();
+    }, 2000);
+  }
 }
 function checkWinner(hp) {
   let safety = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;
