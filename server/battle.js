@@ -144,7 +144,7 @@ let pkmArr = [
       ["Stone Edge", "rock", 80, 1],
       ["Wing Attack", "fly", 60, 1],
       ["Hyper Beam", "normal", 150, 0.9],
-      ["Rock Slide", 75, 0.9],
+      ["Rock Slide", "rock", 75, 0.9],
     ],
   ],
   [
@@ -289,7 +289,7 @@ for (i = 0; i < 4; i++) {
       attackSndElement.play();
       setTimeout(
         attack,
-        2000,
+        2500,
         pk2.moves[Math.floor(Math.random() * 3)],
         pk2,
         pk1,
@@ -360,8 +360,9 @@ function checkWinner(hp) {
   let safety = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;
   if (safety != false) {
     endEffectSndElement.play();
-    document.getElementById("comment").innerHTML =
-      "<p>Game Over: " + safety.name + " has fainted!</p>";
+    setTimeout(function () {
+      alert("Game Over: " + safety.name + " has fainted!");
+    }, 500);
     document.getElementById(hp).innerHTML =
       "<p>HP: 0/" + safety.fullhp + "</p>";
     setTimeout(function () {
