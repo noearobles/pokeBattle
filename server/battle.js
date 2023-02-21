@@ -207,6 +207,18 @@ let pkmArr = [
       ["Self-Destruct", "normal", 200, 1],
     ],
   ],
+  [
+    "Snorlax",
+    "https://projectpokemon.org/images/sprites-models/normal-back/snorlax.gif",
+    "https://projectpokemon.org/images/normal-sprite/snorlax.gif",
+    524,
+    [
+      ["Snore", "normal", 50, 1],
+      ["Body Slam", "normal", 85, 1],
+      ["Belch", "poison", 120, 0.9],
+      ["Covet", "normal", 60, 1],
+    ],
+  ],
 ];
 //pk immunities [0], weaknesses [1], resistances[2]//
 let typeMatch = {
@@ -247,7 +259,12 @@ let typeMatch = {
     ["bug", "fire", "steel", "fighting", "water"],
   ],
   Machamp: [[""], ["fly", "psychic"], ["bug", "rock", "dark"]],
-  Electrode: [[""], ["ground"], ["electric", "fly", "steel"]],
+  Snorlax: [["ghost"], ["fighting"], [""]],
+  Charizard: [
+    ["ground"],
+    ["water", "rock", "electric"],
+    ["fire", "grass", "steel"],
+  ],
 };
 //function to spawn pk, true for player1, false for foe//
 function spawn(bool) {
@@ -368,6 +385,6 @@ function checkWinner(hp) {
       "<p>HP: 0/" + safety.fullhp + "</p>";
     setTimeout(function () {
       location.reload();
-    }, 3000);
+    }, 2000);
   }
 }
