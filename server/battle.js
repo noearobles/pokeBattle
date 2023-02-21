@@ -265,6 +265,11 @@ let typeMatch = {
     ["water", "rock", "electric"],
     ["fire", "grass", "steel"],
   ],
+  Electrode: [
+    [""],
+    ["ground"],
+    ["electric", "fly", "steel"],
+  ],
 };
 //function to spawn pk, true for player1, false for foe//
 function spawn(bool) {
