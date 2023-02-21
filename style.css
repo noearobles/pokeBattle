@@ -346,6 +346,9 @@ header img {
     margin-bottom: 75px;
     margin-left: 40px;
   }
+  #m0, #m1, #m2, #m3 {
+    font-size: smaller;
+}
 }
 
 @media (min-device-width: 320px) and (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 3) {
