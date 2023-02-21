@@ -152,7 +152,7 @@ let pkmArr = [
       ["Bite", "normal", 60, 1],
       ["Take Down", "normal", 90, 0.85],
       ["Assurance", "dark", 60, 1],
-      ["Double Edge", 120, 1],
+      ["Double Edge", "normal", 120, 1],
     ],
   ],
   [
@@ -264,7 +264,7 @@ s1 = document.createElement("img");
 s1.src = pk1.spriteBack; //friendly pkmon(YOU) displays back-side
 document.getElementById("pk1").appendChild(s1);
 document.getElementById("hp1").innerHTML =
-  "<p>HP: " + pk1.hp + "/" + pk1.fullhp + "</p>";
+  "<p>HP: " + pk1.hp + "/" + pk1.fullhp + "</p>" + "<p>";
 //pk2 spawn
 let pk2 = spawn(false);
 s2 = document.createElement("img");
