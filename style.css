@@ -96,7 +96,6 @@ nav {
 }
 th,
 td {
-  padding: 15px;
   border-radius: 1rem;
 }
 
@@ -338,6 +337,17 @@ header img {
   justify-content: center;
   align-items: center;
   animation: opacity 6s ease-in;
+}
+
+@media (min-device-width: 320px) and (max-device-width: 850px){
+  #pk1 img {
+    margin-top: 75px;
+    margin-right: 40px;
+  }
+  #pk2 img {
+    margin-bottom: 75px;
+    margin-left: 40px;
+  }
 }
 
 @media (min-device-width: 320px) and (max-device-width: 850px) and (-webkit-min-device-pixel-ratio: 3) {
