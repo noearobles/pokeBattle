@@ -114,7 +114,7 @@ let pkmArr = [
       ["Strength", "Normal", 80, 1],
       ["Dynamic Punch", "fighting", 50, 1],
       ["Dual Chop", "dragon", 40, 0.9],
-      ["Low Sweep", 65, 1],
+      ["Low Sweep", "fighting",65, 1],
     ],
   ],
   [
@@ -126,7 +126,7 @@ let pkmArr = [
       ["Acid", "poison", 40, 1],
       ["Sludge Bomb", "Poison", 90, 1],
       ["Fire Fang", "fire", 65, 0.95],
-      ["Gunk Shot", 120, 0.8],
+      ["Gunk Shot","poison", 120, 0.8],
     ],
   ],
   [
