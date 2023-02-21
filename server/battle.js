@@ -19,9 +19,7 @@ window.onload = function () {
 let attackSndElement = document.getElementById("attackSnd");
 let battleSndElement = document.getElementById("my_audio");
 let victorySndElement = document.getElementById("my_victory");
-let animationElement = document.querySelector("#pk1");
-animationElement.addEventListener("animationStart", start, false);
-function start(e) {}
+
 //building class to build pk1 and pk2 objects
 class Pokemon {
   constructor(name, spriteBack, spriteFront, hp, moves) {
@@ -252,7 +250,7 @@ function spawn(bool) {
   //creates moves for player 1 pkmon//
   if (bool) {
     for (i = 0; i < 4; i++) {
-      document.getElementById("m" + i).value = pkm.moves[i][0];
+      document.getElementById("m" + i).value = pkm.moves[i][0] +"/" +  pkm.moves[i][1];
       //  + " " + pkm.moves[i][3];
     }
   }
@@ -264,14 +262,14 @@ s1 = document.createElement("img");
 s1.src = pk1.spriteBack; //friendly pkmon(YOU) displays back-side
 document.getElementById("pk1").appendChild(s1);
 document.getElementById("hp1").innerHTML =
-  "<p>HP: " + pk1.hp + "/" + pk1.fullhp + "</p>" + "<p>";
+  "<p>HP: " + pk1.hp + "/" + pk1.fullhp + "</p>" + "<p>" + pk1.name + "</p>";
 //pk2 spawn
 let pk2 = spawn(false);
 s2 = document.createElement("img");
 s2.src = pk2.spriteFront; //foe pkmon displays front-side
 document.getElementById("pk2").appendChild(s2);
 document.getElementById("hp2").innerHTML =
-  "<p>HP: " + pk2.hp + "/" + pk2.fullhp + "</p>";
+  "<p>HP: " + pk2.hp + "/" + pk2.fullhp + "</p>" + pk2.name + "</p>";
 
 //initiate battle sequence once player 1 attacks//
 for (i = 0; i < 4; i++) {

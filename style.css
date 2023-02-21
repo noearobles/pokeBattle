@@ -225,8 +225,7 @@ span::first-letter {
   justify-content: space-around;
   font-size: 1.3rem;
 }
-.flex button {
-}
+
 
 .flex button:hover {
   background-color: #d6c887;
@@ -289,8 +288,7 @@ header img {
     transform: rotate(360deg);
   }
 }
-@keyframes animation {
-}
+
 
 @keyframes loader-inner {
   0% {
@@ -383,6 +381,9 @@ header img {
     float: left;
     padding: 0%;
   }
+  #m0, #m1, #m2, #m3 {
+    font-size: smaller;
+}
   td {
     padding: 1%;
   }
