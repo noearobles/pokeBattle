@@ -82,13 +82,33 @@
             src="lib_music_attack.wav"
             type="audio/wav"
           ></audio>
-          <input type="button" class="btn" id="m0" />
+          <audio
+            id="superEffectSnd"
+            src="poweffectivehit.mp3"
+            type="audio/mpeg"
+          ></audio>
+          <audio
+            id="wasntEffectSnd"
+            src="wasnteffective.mp3"
+            type="audio/mpeg"
+          ></audio>
+          <audio
+            id="didntEffectSnd"
+            src="didntdomuchdamage.mp3"
+            type="audio/mpeg"
+          ></audio>
+          <audio
+            id="attMissEffectSnd"
+            src="attackmissed.mp3"
+            type="audio/mpeg"
+          ></audio>
+          <input type="button" onclick="ani()" class="btn" id="m0" />
         </td>
-        <td><input type="button" class="btn" id="m1" /></td>
+        <td><input type="button" onclick="ani()" class="btn" id="m1" /></td>
       </tr>
       <tr>
-        <td><input type="button" class="btn" id="m2" /></td>
-        <td><input type="button" class="btn" id="m3" /></td>
+        <td><input type="button" onclick="ani()" class="btn" id="m2" /></td>
+        <td><input type="button" onclick="ani()" class="btn" id="m3" /></td>
       </tr>
     </table>
   </body>

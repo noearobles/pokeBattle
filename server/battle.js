@@ -16,10 +16,14 @@ window.onload = function () {
   randomBG.style.backgroundImage = "url(" + images[number] + ")";
   battleSndElement.play();
 };
+let moveButton = document.querySelector(".btn");
 let attackSndElement = document.getElementById("attackSnd");
 let battleSndElement = document.getElementById("my_audio");
 let victorySndElement = document.getElementById("my_victory");
 let supEffectSndElement = document.getElementById("superEffectSnd");
+let wasntEffectSndElement = document.getElementById("wasntEffectSnd");
+let didntEffectSndElement = document.getElementById("didntEffectSnd");
+let attMissEffectSndElement = document.getElementById("attMissEffectSnd");
 
 //building class to build pk1 and pk2 objects
 class Pokemon {
@@ -316,6 +320,7 @@ function attack(move, attacker, receiver, hp, owner) {
             setTimeout(function () {
               document.getElementById("comment").innerHTML =
                 "<p>It had no effect!</p>";
+              wasntEffectSndElement.play();
             }, 1000);
             break;
           case 1: //weakness to certain moves("type")
@@ -323,6 +328,7 @@ function attack(move, attacker, receiver, hp, owner) {
             setTimeout(function () {
               document.getElementById("comment").innerHTML =
                 "<p>It was super effective!</p>";
+              supEffectSndElement.play();
             }, 1000);
             break;
           case 2: //resistance to certain moves("type")
@@ -330,6 +336,7 @@ function attack(move, attacker, receiver, hp, owner) {
             setTimeout(function () {
               document.getElementById("comment").innerHTML =
                 "<p>It was not very effective!</p>";
+              didntEffectSndElement.play();
             }, 1000);
             break;
         }
@@ -343,11 +350,11 @@ function attack(move, attacker, receiver, hp, owner) {
   } else {
     setTimeout(function () {
       document.getElementById("comment").innerHTML = "<p>Attack missed!</p>";
+      attMissEffectSndElement.play();
     });
   }
   checkWinner(hp);
 }
-
 function checkWinner(hp) {
   let safety = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;
   if (safety != false) {
