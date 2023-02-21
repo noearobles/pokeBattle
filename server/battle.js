@@ -312,7 +312,7 @@ for (i = 0; i < 4; i++) {
       attackSndElement.play();
       setTimeout(
         attack,
-        2500,
+        3100,
         pk2.moves[Math.floor(Math.random() * 3)],
         pk2,
         pk1,
@@ -327,6 +327,7 @@ for (i = 0; i < 4; i++) {
 function attack(move, attacker, receiver, hp, owner) {
   document.getElementById("comment").innerHTML =
     "<p>" + owner + attacker.name + " used " + move[0] + "!</p>";
+
   let accuracy = move[3] * 255;
   if (Math.floor(Math.random() * 256) < accuracy) {
     //gen-1 accuracy//
