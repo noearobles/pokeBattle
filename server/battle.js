@@ -19,6 +19,7 @@ window.onload = function () {
 let attackSndElement = document.getElementById("attackSnd");
 let battleSndElement = document.getElementById("my_audio");
 let victorySndElement = document.getElementById("my_victory");
+let supEffectSndElement = document.getElementById("superEffectSnd");
 
 //building class to build pk1 and pk2 objects
 class Pokemon {
@@ -111,10 +112,10 @@ let pkmArr = [
     "https://projectpokemon.org/images/normal-sprite/machamp.gif",
     384,
     [
-      ["Strength", "Normal", 80, 1],
+      ["Strength", "normal", 80, 1],
       ["Dynamic Punch", "fighting", 50, 1],
       ["Dual Chop", "dragon", 40, 0.9],
-      ["Low Sweep", "fighting",65, 1],
+      ["Low Sweep", "fighting", 65, 1],
     ],
   ],
   [
@@ -126,7 +127,7 @@ let pkmArr = [
       ["Acid", "poison", 40, 1],
       ["Sludge Bomb", "Poison", 90, 1],
       ["Fire Fang", "fire", 65, 0.95],
-      ["Gunk Shot","poison", 120, 0.8],
+      ["Gunk Shot", "poison", 120, 0.8],
     ],
   ],
   [
@@ -186,7 +187,7 @@ let pkmArr = [
       ["Hurricane", "flying", 110, 0.7],
       ["Twister", "dragon", 40, 1],
       ["Hydro Pump", "water", 110, 0.8],
-      ["Ice Fang", "ice", 65, 95],
+      ["Ice Fang", "ice", 65, 0.95],
     ],
   ],
   [
@@ -250,7 +251,8 @@ function spawn(bool) {
   //creates moves for player 1 pkmon//
   if (bool) {
     for (i = 0; i < 4; i++) {
-      document.getElementById("m" + i).value = pkm.moves[i][0] +"/" +  pkm.moves[i][1];
+      document.getElementById("m" + i).value =
+        pkm.moves[i][0] + "/" + pkm.moves[i][1];
       //  + " " + pkm.moves[i][3];
     }
   }
@@ -269,7 +271,7 @@ s2 = document.createElement("img");
 s2.src = pk2.spriteFront; //foe pkmon displays front-side
 document.getElementById("pk2").appendChild(s2);
 document.getElementById("hp2").innerHTML =
-  "<p>HP: " + pk2.hp + "/" + pk2.fullhp + "</p>" + pk2.name + "</p>";
+  "<p>HP: " + pk2.hp + "/" + pk2.fullhp + "</p>" + "<p>" + pk2.name + "</p>";
 
 //initiate battle sequence once player 1 attacks//
 for (i = 0; i < 4; i++) {
