@@ -246,6 +246,7 @@ let typeMatch = {
     ["electric", "rock"],
     ["bug", "fire", "steel", "fighting", "water"],
   ],
+  Machamp: [[""], ["fly", "psychic"], ["bug", "rock", "dark"]],
   Electrode: [[""], ["ground"], ["electric", "fly", "steel"]],
 };
 //function to spawn pk, true for player1, false for foe//
