@@ -28,6 +28,16 @@ let endEffectSndElement = document.getElementById("endEffectSnd");
 const pk1img = document.querySelector("#pk1");
 const pk2img = document.querySelector("#pk2");
 const shakepk1 = document.querySelector(".btn1");
+function animate() {
+  pk1img.classList.remove("shake");
+  pk1img.offsetWidth;
+  pk1img.classList.add("shake");
+}
+function animateCP() {
+  pk2img.classList.remove("shake2");
+  pk2img.offsetWidth;
+  pk2img.classList.add("shake2");
+}
 
 //building class to build pk1 and pk2 objects
 class Pokemon {
@@ -338,9 +348,7 @@ for (i = 0; i < 4; i++) {
   function addHandler(btn, move, pk1, pk2) {
     btn.addEventListener("click", function (e) {
       attack(move, pk1, pk2, "hp2", "");
-      pk1img.classList.remove("shake");
-      pk1img.offsetWidth;
-      pk1img.classList.add("shake");
+      animate();
       attackSndElement.play();
       setTimeout(
         attack,

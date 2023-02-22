@@ -66,9 +66,11 @@ nav {
   align-items: center;
 }
 
-.shake,
-.shake2 {
+.shake{
   animation: shake 0.3s ease-in;
+}
+.shake2 {
+  animation: shake2 0.3s ease-in;
 }
 
 #main {
@@ -320,6 +322,15 @@ header img {
     height: 0%;
   }
 }
+@keyframes shake2 {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-80px, 20px);
+  }
+  
+}
 @keyframes shake {
   0% {
     transform: translate(0);
@@ -327,6 +338,7 @@ header img {
   50% {
     transform: translate(80px, -20px);
   }
+  
 }
 .loader {
   display: flex;
