@@ -222,6 +222,30 @@ let pkmArr = [
       ["Covet", "normal", 60, 1],
     ],
   ],
+  [
+    "Dugtrio",
+    "https://projectpokemon.org/images/sprites-models/normal-back/dugtrio.gif",
+    "https://projectpokemon.org/images/normal-sprite/dugtrio.gif",
+    274,
+    [
+      ["Slash", "normal", 70, 1],
+      ["Bull Doze", "ground", 60, 1],
+      ["Dig", "ground", 80, 1],
+      ["Tri Attack", "normal", 80, 1],
+    ],
+  ],
+  [
+    "Scyther",
+    "https://projectpokemon.org/images/sprites-models/normal-back/scyther.gif",
+    "https://projectpokemon.org/images/normal-sprite/scyther.gif",
+    344,
+    [
+      ["Fury Cutter", "bug", 40, 0.95],
+      ["Air Slash", "ground", 75, 0.95],
+      ["X-Scissor", "bug", 80, 1],
+      ["Cut", "normal", 50, 0.95],
+    ],
+  ],
 ];
 //pk immunities [0], weaknesses [1], resistances[2]//
 let typeMatch = {
@@ -269,6 +293,12 @@ let typeMatch = {
     ["fire", "grass", "steel"],
   ],
   Electrode: [[""], ["ground"], ["electric", "fly", "steel"]],
+  Dugtrio: [["electric"], ["water", "grass", "ice"], ["poison", "rock"]],
+  Scyther: [
+    ["ground"],
+    ["fly", "rock", "fire", "electric", "ice"],
+    ["grass", "fightin", "bug"],
+  ],
 };
 //function to spawn pk, true for player1, false for foe//
 function spawn(bool) {
@@ -321,9 +351,6 @@ for (i = 0; i < 4; i++) {
         "hp1",
         "Foe "
       );
-      // pk2img.classList.remove("shake2");
-      // pk2img.offsetWidth;
-      // pk2img.classList.add("shake2");
     });
   }
   addHandler(btn, move, pk1, pk2);
@@ -385,20 +412,6 @@ function attack(move, attacker, receiver, hp, owner) {
     });
   }
   checkWinner(hp);
-}
-function checkWinner(hp) {
-  let safety = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;
-  if (safety != false) {
-    endEffectSndElement.play();
-    setTimeout(function () {
-      alert("Game Over: " + safety.name + " has fainted!");
-    }, 500);
-    document.getElementById(hp).innerHTML =
-      "<p>HP: 0/" + safety.fullhp + "</p>";
-    setTimeout(function () {
-      location.reload();
-    }, 2000);
-  }
 }
 function checkWinner(hp) {
   let safety = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;

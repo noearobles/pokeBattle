@@ -66,7 +66,8 @@ nav {
   align-items: center;
 }
 
-.shake{
+.shake,
+.shake2 {
   animation: shake 0.3s ease-in;
 }
 
@@ -111,10 +112,11 @@ td > img {
   width: auto;
   height: auto;
 }
-.btn1{
+.btn1 {
   border-radius: 5px;
 }
-.btn,.btn1 {
+.btn,
+.btn1 {
   background-color: #406163;
   display: block;
   width: 100%;
@@ -128,7 +130,8 @@ td > img {
   margin-left: 20px;
   margin-right: 20px;
 }
-.btn:hover,.btn1:hover {
+.btn:hover,
+.btn1:hover {
   color: #d6c887;
 }
 table {
@@ -320,8 +323,8 @@ header img {
   0% {
     transform: translate(0);
   }
-50%{
-    transform: translate(80px,-20px);
+  50% {
+    transform: translate(80px, -20px);
   }
 }
 .loader {
