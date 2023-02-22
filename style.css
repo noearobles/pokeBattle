@@ -381,7 +381,10 @@ header img {
   }
   #pk2 img {
     padding-bottom: 30px;
-    padding-left: 30px;
+    padding-left: 10px;
+  }
+  #arena{
+    height: auto;
   }
 }
 
@@ -401,8 +404,8 @@ header img {
   .pokemon {
     width: 40%;
   }
-  #arean{
-    height: quto;
+  #arena{
+    height: auto;
   }
   audio {
     border: unset;
