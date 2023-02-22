@@ -421,6 +421,8 @@ function attack(move, attacker, receiver, hp, owner) {
     });
   }
   checkWinner(hp);
+  checkWinner1(hp);
+  checkWinnerCP(hp);
 }
 function checkWinner(hp) {
   let safety = pk1.hp <= 0 ? pk1 : pk2.hp <= 0 ? pk2 : false;
@@ -434,5 +436,19 @@ function checkWinner(hp) {
     setTimeout(function () {
       location.reload();
     }, 2000);
+  }
+}
+function checkWinnerCP(hp) {
+  let pk2hp = pk2.hp;
+  if (pk2hp <= 0) {
+    endEffectSndElement.play();
+    pk2img.style.visibility = "hidden";
+  }
+}
+function checkWinner1(hp) {
+  let pk1hp = pk1.hp;
+  if (pk1hp <= 0) {
+    endEffectSndElement.play();
+    pk1img.style.visibility = "hidden";
   }
 }

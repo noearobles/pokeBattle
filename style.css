@@ -72,7 +72,9 @@ nav {
 .shake2 {
   animation: shake2 0.3s ease-in 2.7s;
 }
-
+#comment span{
+  color: red;
+}
 #main {
   background-repeat: no-repeat;
   background-size: 100% 100%;
