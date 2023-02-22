@@ -357,7 +357,8 @@ for (i = 0; i < 4; i++) {
         pk2,
         pk1,
         "hp1",
-        "Foe "
+        "Foe ",
+        animateCP()
       );
     });
   }
