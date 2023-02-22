@@ -269,6 +269,7 @@ header img {
   border-radius: 50px;
   text-align: center;
   letter-spacing: 2px;
+  color: #d6c887;
 }
 .search::placeholder {
   text-align: center;
