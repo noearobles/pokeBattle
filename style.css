@@ -377,21 +377,49 @@ header img {
   body{
     font-size: 15px;
    }
-   #pk1 img {
+  #pk1 img {
     padding-top: 200px;
     padding-right: 40px;
   }
   #pk2 img {
     padding-bottom: 30px;
-    padding-left: 10px;
+    padding-left: 30px;
+  }
+  .pokemon {
+    width: 40%;
   }
   #arena{
     height: auto;
   }
+  audio {
+    border: unset;
+    border-radius: unset;
+  }
+  .search {
+    margin: 1rem;
+    width: 220px;
+  }
+  #butt {
+    font-size: 15px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+  }
+  #m0, #m1, #m2, #m3 {
+    font-size: smaller;
+ }
 }
 
 @media (min-device-width: 320px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 3) {
-
+  #m0, #m1, #m2, #m3 {
+   font-size: smaller;
+}
   body{
     font-size: 15px;
    }
