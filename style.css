@@ -161,8 +161,6 @@ p {
   height: min-content;
   width: 100%;
   margin-bottom: 0;
-  margin-left: 25px;
-  margin-right: 25px;
 }
 #pokemonBox {
   display: flex;
@@ -359,6 +357,10 @@ header img {
   border-radius: 10px;
 }
 
+#pss{
+  font-size: smaller;
+  text-align: center;
+}
 .loader-wrapper {
   width: 100%;
   height: 100%;
