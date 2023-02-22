@@ -6,7 +6,6 @@ images = [
   "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/204364595/original/86db6005cd51b4f60e71cca277f603a82cf5646a/draw-a-pixel-pokemon-battle-background.png",
   "https://cutewallpaper.org/cdn-cgi/mirage/91b98c5373d6a01796e55b9f978389531ff4e5ebae85abd935c54ab8d42fdd46/1280/21/pokemon-battle-backgrounds/Pokemon-X-and-Y-battle-background-10-by-PhoenixOfLight92-on-.png",
   "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d843okx-eb13e8e4-0fa4-4fa9-968a-e0f36ff168de.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDg0M29reC1lYjEzZThlNC0wZmE0LTRmYTktOTY4YS1lMGYzNmZmMTY4ZGUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TIK_E5L8dTyBUk_dADA5WkLP8jSJMR7YGJG54KNAido",
-  "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d83og9h-f3e2558c-6085-478f-899b-882bf6cb62d1.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDgzb2c5aC1mM2UyNTU4Yy02MDg1LTQ3OGYtODk5Yi04ODJiZjZjYjYyZDEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.UJwQi7Yfd001rT6JFVfbFN4DmL6ZmE2iBPBqpv6f-DA",
   "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/412696943ecf62e9ee477e085adbea07-1648378716/RockForest/draw-a-pixel-pokemon-battle-background.gif",
   "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d83m36e-3b58ca48-fe8a-456e-9ffc-a5a84eca6613.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZDgzbTM2ZS0zYjU4Y2E0OC1mZThhLTQ1NmUtOWZmYy1hNWE4NGVjYTY2MTMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.jOpoPaOypPatcb4k7flznTP9YiwUEX2q2BKoeWUPU74",
 ];
@@ -33,6 +32,7 @@ function animate() {
   pk1img.offsetWidth;
   pk1img.classList.add("shake");
 }
+
 function animateCP() {
   pk2img.classList.remove("shake2");
   pk2img.offsetWidth;
@@ -328,6 +328,7 @@ function spawn(bool) {
 //pk1 spawn
 let pk1 = spawn(true);
 s1 = document.createElement("img");
+s1.setAttribute("id", "pkmIMG");
 s1.src = pk1.spriteBack; //friendly pkmon(YOU) displays back-side
 document.getElementById("pk1").appendChild(s1);
 document.getElementById("hp1").innerHTML =
@@ -335,6 +336,7 @@ document.getElementById("hp1").innerHTML =
 //pk2 spawn
 let pk2 = spawn(false);
 s2 = document.createElement("img");
+s2.setAttribute("id", "pkmIMG");
 s2.src = pk2.spriteFront; //foe pkmon displays front-side
 document.getElementById("pk2").appendChild(s2);
 document.getElementById("hp2").innerHTML =
@@ -358,7 +360,8 @@ for (i = 0; i < 4; i++) {
         pk1,
         "hp1",
         "Foe ",
-        animateCP()
+        animateCP(),
+        attackSndElement.play()
       );
     });
   }
