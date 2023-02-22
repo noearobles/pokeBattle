@@ -409,7 +409,6 @@ header img {
     position: fixed;
     left: 0;
     bottom: 0;
-    padding: 10px;
   }
   #m0, #m1, #m2, #m3 {
     font-size: smaller;
@@ -455,6 +454,5 @@ header img {
     position: fixed;
     left: 0;
     bottom: 0;
-    padding: 10px;
   }
 }
