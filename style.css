@@ -139,10 +139,12 @@ td {
 .btn1:hover {
   color: #d6c887;
 }
-table {
-  margin-left: auto;
+
+#moves{
   margin-right: auto;
+  width: 100%;
 }
+
 
 body {
   font-size: 20px;
