@@ -255,6 +255,30 @@ let pkmArr = [
       ["Cut", "normal", 50, 0.95],
     ],
   ],
+  [
+    "Onix",
+    "https://projectpokemon.org/images/sprites-models/normal-back/onix.gif",
+    "https://projectpokemon.org/images/normal-sprite/onix.gif",
+    274,
+    [
+      ["Slam", "normal", 80, 0.75],
+      ["Earthquake", "ground", 100, 1],
+      ["Rock Slide", "rock", 75, 0.9],
+      ["Rock Throw","rock", 50, 0.65],
+    ],
+  ],
+  [
+    "Arcanine",
+    "https://projectpokemon.org/images/sprites-models/normal-back/arcanine.gif",
+    "https://projectpokemon.org/images/normal-sprite/arcanine.gif",
+    384,
+    [
+      ["Thrash", "fire", 120, 1],
+      ["Fire Blast", "fire", 120, 85],
+      ["Flame Wheel", "fire", 60, 1],
+      ["Extreme Speed","normal", 80, 1],
+    ],
+  ],
 ];
 //pk immunities [0], weaknesses [1], resistances[2]//
 let typeMatch = {
@@ -307,6 +331,15 @@ let typeMatch = {
     ["ground"],
     ["fly", "rock", "fire", "electric", "ice"],
     ["grass", "fightin", "bug"],
+  ],
+  Onix: [
+    ["Electric"],
+    ["grass", "water", "steel", "fighting", "ground", "ice"],
+    ["normal", "fire", "rock", "fly", "poison"],
+  ],Arcanine: [
+    [""],
+    ["water","ground","rock"],
+    ["fire","grass","ice","bug","steel","fairy"],
   ],
 };
 //function to spawn pk, true for player1, false for foe//
