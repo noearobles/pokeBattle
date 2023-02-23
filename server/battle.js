@@ -250,7 +250,7 @@ let pkmArr = [
     344,
     [
       ["Fury Cutter", "bug", 40, 0.95],
-      ["Air Slash", "ground", 75, 0.95],
+      ["Air Slash", "fly", 75, 0.95],
       ["X-Scissor", "bug", 80, 1],
       ["Cut", "normal", 50, 0.95],
     ],
