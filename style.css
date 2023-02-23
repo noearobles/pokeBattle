@@ -387,9 +387,6 @@ header img {
     padding-bottom: 30px;
     padding-left: 30px;
   }
-  .pokemon {
-    width: 40%;
-  }
   #arena{
     height: auto;
   }
@@ -431,9 +428,6 @@ header img {
   #pk2 img {
     padding-bottom: 30px;
     padding-left: 30px;
-  }
-  .pokemon {
-    width: 40%;
   }
   #arena{
     height: auto;
