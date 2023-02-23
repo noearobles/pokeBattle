@@ -140,11 +140,10 @@ td {
   color: #d6c887;
 }
 
-#moves{
+#moves {
   margin-right: auto;
   width: 100%;
 }
-
 
 body {
   font-size: 20px;
@@ -166,11 +165,9 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 auto;
   max-width: 1200px;
 }
 .pokemon {
-  width: min-content;
   border-radius: 10px;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 1);
   border-top: 1px solid #000;
@@ -357,7 +354,7 @@ header img {
   border-radius: 10px;
 }
 
-#pss{
+#pss {
   font-size: smaller;
   text-align: center;
 }
@@ -376,9 +373,9 @@ header img {
 }
 
 @media (min-device-width: 320px) and (max-device-width: 850px) {
-  body{
+  body {
     font-size: 15px;
-   }
+  }
   #pk1 img {
     padding-top: 200px;
     padding-right: 40px;
@@ -387,7 +384,7 @@ header img {
     padding-bottom: 30px;
     padding-left: 30px;
   }
-  #arena{
+  #arena {
     height: auto;
   }
   audio {
@@ -409,18 +406,25 @@ header img {
     left: 0;
     bottom: 0;
   }
-  #m0, #m1, #m2, #m3 {
+  #m0,
+  #m1,
+  #m2,
+  #m3 {
     font-size: smaller;
- }
+  }
 }
 
 @media (min-device-width: 320px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 3) {
-  #m0, #m1, #m2, #m3 {
-   font-size: smaller;
-}
-  body{
+ 
+  #m0,
+  #m1,
+  #m2,
+  #m3 {
+    font-size: smaller;
+  }
+  body {
     font-size: 15px;
-   }
+  }
   #pk1 img {
     padding-top: 200px;
     padding-right: 40px;
@@ -429,7 +433,7 @@ header img {
     padding-bottom: 30px;
     padding-left: 30px;
   }
-  #arena{
+  #arena {
     height: auto;
   }
   audio {
