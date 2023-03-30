@@ -14,7 +14,7 @@ window.onload = function () {
   randomBG.style.backgroundImage = "url(" + images[number] + ")";
   battleSndElement.play();
 };
-let moveButton = document.querySelector(".btn");
+let moveButton = document.querySelector("#moves");
 let attackSndElement = document.getElementById("attackSnd");
 let battleSndElement = document.getElementById("my_audio");
 let victorySndElement = document.getElementById("my_victory");
@@ -25,12 +25,18 @@ let attMissEffectSndElement = document.getElementById("attMissEffectSnd");
 let endEffectSndElement = document.getElementById("endEffectSnd");
 const pk1img = document.querySelector("#pk1");
 const pk2img = document.querySelector("#pk2");
-const shakepk1 = document.querySelector(".btn1");
 function animate() {
   pk1img.classList.remove("shake");
   pk1img.offsetWidth;
   pk1img.classList.add("shake");
 }
+const showMoves = () => {
+  moveButton.style.visibility = "visible";
+};
+const hideMoves = () => {
+  moveButton.style.visibility = "hidden";
+  setTimeout(showMoves,2700);
+};
 
 function animateCP() {
   pk2img.classList.remove("shake2");
@@ -264,7 +270,7 @@ let pkmArr = [
       ["Slam", "normal", 80, 0.75],
       ["Earthquake", "ground", 100, 1],
       ["Rock Slide", "rock", 75, 0.9],
-      ["Rock Throw","rock", 50, 0.65],
+      ["Rock Throw", "rock", 50, 0.65],
     ],
   ],
   [
@@ -276,7 +282,7 @@ let pkmArr = [
       ["Thrash", "fire", 120, 1],
       ["Fire Blast", "fire", 120, 85],
       ["Flame Wheel", "fire", 60, 1],
-      ["Extreme Speed","normal", 80, 1],
+      ["Extreme Speed", "normal", 80, 1],
     ],
   ],
 ];
@@ -336,10 +342,11 @@ let typeMatch = {
     ["Electric"],
     ["grass", "water", "steel", "fighting", "ground", "ice"],
     ["normal", "fire", "rock", "fly", "poison"],
-  ],Arcanine: [
+  ],
+  Arcanine: [
     [""],
-    ["water","ground","rock"],
-    ["fire","grass","ice","bug","steel","fairy"],
+    ["water", "ground", "rock"],
+    ["fire", "grass", "ice", "bug", "steel", "fairy"],
   ],
 };
 //function to spawn pk, true for player1, false for foe//
@@ -383,6 +390,7 @@ for (i = 0; i < 4; i++) {
     btn.addEventListener("click", function (e) {
       attack(move, pk1, pk2, "hp2", "");
       animate();
+      hideMoves();
       attackSndElement.play();
       setTimeout(
         attack,
@@ -403,7 +411,6 @@ for (i = 0; i < 4; i++) {
 function attack(move, attacker, receiver, hp, owner) {
   document.getElementById("comment").innerHTML =
     "<p>" + owner + attacker.name + " used " + move[0] + "!</p>";
-
   let accuracy = move[3] * 255;
   if (Math.floor(Math.random() * 256) < accuracy) {
     //gen-1 accuracy//
