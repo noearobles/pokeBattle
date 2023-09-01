@@ -14,9 +14,13 @@ window.onload = function () {
   randomBG.style.backgroundImage = "url(" + images[number] + ")";
   battleSndElement.play();
 };
+
+
+
 let moveButton = document.querySelector("#moves");
 let attackSndElement = document.getElementById("attackSnd");
 let battleSndElement = document.getElementById("my_audio");
+battleSndElement.volume = 0.25;
 let victorySndElement = document.getElementById("my_victory");
 let supEffectSndElement = document.getElementById("superEffectSnd");
 let wasntEffectSndElement = document.getElementById("wasntEffectSnd");
